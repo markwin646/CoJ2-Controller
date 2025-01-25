@@ -25,26 +25,16 @@ Imports System.Environment
 Imports System.IO
 
 Public Class frmClosingServer
-    Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As Integer
-    Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
-    Private Declare Function SendMessageSTRING Lib "user32" Alias "SendMessageA" (ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As String) As Integer
-    Private Const WM_CHAR = &H102
-    Private Declare Function SendMessageAsLong Lib "user32" Alias "SendMessageA" (ByVal hWnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
-    Private Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal hWnd1 As Integer, ByVal hWnd2 As Integer, ByVal lpsz1 As String, ByVal lpsz2 As String) As Integer
 
-    ' Constante para los mensajes
-
-    ' Recupera en un buffer el texto de la linea
-    Const EM_GETLINE As Integer = &HC4
-    ' Recupera la cantidad de lineas
-    Const EM_GETLINECOUNT As Integer = &HBA
-
-
+    Private returnToMainWindow As Boolean = True
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         CerrarServidor = False
+        btnApagadoPulsado = False
+        returnToMainWindow = False
         Me.Close()
         Me.Dispose()
+        frmConsola.Show()
     End Sub
 
 
@@ -59,22 +49,23 @@ Public Class frmClosingServer
         Timershutdown.Enabled = True
 
         Dim vText As String = "/servershutdown"
-        Dim vHwnd As Integer = FindWindow("ConsoleWindowClass", vbNullString)
-
-        For i As Integer = 1 To Len(vText)
-            SendMessageSTRING(vHwnd, WM_CHAR, Asc(Mid(vText, i, 1)), 0&)
-        Next i
-
-        SendMessageSTRING(vHwnd, WM_CHAR, Asc(vbCr), 0&)
-        SendMessageSTRING(vHwnd, WM_CHAR, Asc(vbLf), 0&)
+        Module1.windowSender.FindWindow()
+        Module1.windowSender.SendMessageToConsole(vText)
 
         CerrarServidor = True
+        frmConsola.CloseLogReader()
     End Sub
 
 
     Private Sub frmClosingServer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If btnApagadoPulsado = False Then
-            e.Cancel = True
+            If returnToMainWindow Then
+                frmConsola.CloseLogReader()
+                frmConsola.Close()
+                frmConsola.Dispose()
+                FrmMain.Show()
+            End If
+            'e.Cancel = True
         Else
             Me.Dispose()
         End If
@@ -119,5 +110,7 @@ Public Class frmClosingServer
     Private Sub frmClosingServer_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         FrmMain.Hide()
         frmConsola.Hide()
+        returnToMainWindow = True
+        btnApagadoPulsado = False
     End Sub
 End Class

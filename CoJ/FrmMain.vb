@@ -256,6 +256,7 @@ Public Class FrmMain
     Private Sub FrmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Me.Dispose()
         Application.ExitThread()
+        Application.Exit()
     End Sub
 
     Private Sub AboutModCojControllerToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ArchiveToolStripMenuItem1.Click

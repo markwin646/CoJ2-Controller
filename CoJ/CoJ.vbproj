@@ -91,12 +91,14 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameLogReader.vb" />
     <Compile Include="ClosingServer.Designer.vb">
       <DependentUpon>ClosingServer.vb</DependentUpon>
     </Compile>
     <Compile Include="ClosingServer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConsoleWindowSender.vb" />
     <Compile Include="frmClase.Designer.vb">
       <DependentUpon>frmClase.vb</DependentUpon>
     </Compile>

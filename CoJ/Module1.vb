@@ -31,6 +31,7 @@ Imports System.Environment
 
 Module Module1
 
+    Public windowSender As New ConsoleWindowSender()
     Public CerrarServidor As Boolean = False
     Public modName As String
     Public ModNameComprobacionGuardar As String = ""

@@ -25,13 +25,6 @@ Imports System.Environment
 Imports System.IO
 
 Public Class frmConsola
-    Private Declare Function FindWindow Lib "user32" Alias "FindWindowA" (ByVal lpClassName As String, ByVal lpWindowName As String) As Integer
-    Private Declare Function PostMessage Lib "user32" Alias "PostMessageA" (ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
-    Private Declare Function SendMessageSTRING Lib "user32" Alias "SendMessageA" (ByVal hwnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As String) As Integer
-    Private Const WM_CHAR = &H102
-    Private Declare Function SendMessageAsLong Lib "user32" Alias "SendMessageA" (ByVal hWnd As Integer, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
-    Private Declare Function FindWindowEx Lib "user32" Alias "FindWindowExA" (ByVal hWnd1 As Integer, ByVal hWnd2 As Integer, ByVal lpsz1 As String, ByVal lpsz2 As String) As Integer
-
     ' Constante para los mensajes
 
     ' Recupera en un buffer el texto de la linea
@@ -49,6 +42,13 @@ Public Class frmConsola
     Dim GameUnbalanced As Boolean = False
     Dim btnApagarPulsado As Boolean = False
 
+    Dim windowExist As Boolean = False
+    Dim gameLogReader As New GameLogReader()
+
+    Public Sub CloseLogReader()
+        gameLogReader.Close()
+    End Sub
+
     Private Sub btnEnviar_Click() Handles btnEnviar.Click
         SendToConsole(cboxMess.Text.Trim & " " & txtEnviaTexto.Text.Trim)
         txtEnviaTexto.Text = ""
@@ -57,8 +57,8 @@ Public Class frmConsola
 
     Private Sub frmConsola_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Me.Hide()
-        vHwnd = FindWindow("ConsoleWindowClass", vbNullString)
-        If vHwnd > 0 Then
+        windowExist = Module1.windowSender.FindWindow()
+        If windowExist Then
             If btnApagarPulsado = False Then
                 If vApagado <> "restart" And vRestart = False Then
                     frmClosingServer.Show()
@@ -67,24 +67,27 @@ Public Class frmConsola
                     e.Cancel = True
                     Me.Show()
                 ElseIf CerrarServidor = True Then
+                    gameLogReader.Close()
                     vRestart = False
                     Me.Dispose()
                     FrmMain.Show()
                 Else 'Colocado este bucle porque hay veces que la aplicación se queda colgada y oculta, a ver si deja de pasar
+                    gameLogReader.Close()
                     Application.ExitThread()
                 End If
 
             ElseIf btnApagarPulsado = True Then
+                gameLogReader.Close()
                 Me.Dispose()
                 FrmMain.Show()
-
             End If
             'SendToConsole("/servershutdown")
-        ElseIf vHwnd = 0 And btnApagarPulsado = True Then
+        ElseIf btnApagarPulsado = True Then
+            gameLogReader.Close()
             Me.Dispose()
             FrmMain.Show()
-
         Else 'Colocado este bucle porque hay veces que la aplicación se queda colgada y oculta, a ver si deja de pasar
+            gameLogReader.Close()
             Application.ExitThread()
         End If
 
@@ -361,13 +364,9 @@ Public Class frmConsola
     'Dim HwndEscritura As String
     Private Sub TimerLoad_Tick(sender As Object, e As EventArgs) Handles TimerLoad.Tick
         'Buscar la ventana del servidor
-        vHwnd = FindWindow("ConsoleWindowClass", vbNullString)
-        ' FindWindowEx(   , 0, "ConsoleWindowClass", vbNullString)
+        windowExist = Module1.windowSender.FindWindow()
 
-        'Dim ret2 = FindWindowEx(0, 0, vbNullString, NombreVentana)
-        'HwndEscritura = FindWindowEx(0, 0, "techland_game_class", vbNullString)
-
-        If vHwnd = 0 Then
+        If Not windowExist Then
             ' MsgBox("Error. El Hwnd es 0 ", vbCritical)
         Else
             TimerLoad.Enabled = False
@@ -425,8 +424,6 @@ Public Class frmConsola
 
 
     Dim tiempoMapaActivado As Boolean = False
-    Dim contaLineas As Integer = 0
-    Dim reader As StreamReader
     Dim readerConfig As StreamReader
     Dim lineaLeida As String = ""
     Dim minutes As Integer = 0
@@ -434,11 +431,12 @@ Public Class frmConsola
     Dim seconds As Integer = 59 'Empezamos con 11 segundos de sobra mientras se incorporan jugadores
     Dim ciclosSinContar = 4
     Dim reactivaHwnd As Integer = 0
+    Dim refreshTickCount As Integer = 0
     Private Sub TimerReadConsole_Tick(sender As Object, e As EventArgs) Handles TimerReadConsole.Tick
 
         'Cada vez que llegamos a 100 (5m.) reactivamos el Hwnd
-        If reactivaHwnd = 100 Then  '(100 x 3 = 300 segundos)
-            vHwnd = FindWindow("ConsoleWindowClass", vbNullString)
+        If reactivaHwnd = 100 * 6 Then  '(100 x 3 = 300 segundos)
+            windowExist = Module1.windowSender.FindWindow()
             reactivaHwnd = 0
         Else
             reactivaHwnd = reactivaHwnd + 1
@@ -448,43 +446,58 @@ Public Class frmConsola
         'BORRAR: He movido la lectura a una rutina aparte porque se tendrá que leer desde más sitios
         LeerConsola()
 
-
-        Dim ceros As String = ""
-        'Control del tiempo que resta
-        If tiempoMapaActivado = True And minutes > 0 Then
-            'timeRemain = timeRemain - 3
-            If seconds.ToString.Trim.Length = 1 Then
-                ceros = "0"
-            Else
-                ceros = ""
-            End If
-
-            'Empezamos a contar hacia atrás 
-            If ciclosSinContar <= 0 Then
-                If ciclosSinContar = 0 Then
-                    SendToConsole("/adminsay Starting - " & lblCurrentMap.Tag & "  (" & bountyOrPointsToShow & " / Time: " & (Int(timeRemain / 60)).ToString & "m.)")
-                    SendToConsole("/adminsay Starting - " & lblCurrentMap.Tag & "  (" & bountyOrPointsToShow & " / Time: " & (Int(timeRemain / 60)).ToString & "m.)")
-                End If
-                lblTimeMap.Text = "Time Map : " & (Int(timeRemain / 60)).ToString & ":00 m."
-                lblRemainTime.Text = "Rem. time : " & (minutes - 1).ToString & ":" & ceros & seconds & " m."
-                seconds = seconds - 3
-                If seconds = -1 Then
-                    seconds = 59
-                    minutes = minutes - 1
-                End If
-            End If
-
-            'Esta variable volverá a tomar valor 4 (x3sec. = 12sec.) en la misma rutina
-            'que toma la variable "minutes" el tiempo al cargar un nuevo mapa
-            ciclosSinContar = ciclosSinContar - 1
-
-
-
-        ElseIf tiempoMapaActivado = True And minutes = 0 Then
-            lblRemainTime.Text = "0:00 m."
-            tiempoMapaActivado = False
+        If refreshTickCount = 6 Then
+            CheckMap()
+            CheckProcess()
+            refreshTickCount = 0
+        Else
+            refreshTickCount += 1
         End If
 
+
+    End Sub
+
+    Private Sub CheckMap()
+        If tiempoMapaActivado Then
+            Dim ceros As String = ""
+            'Control del tiempo que resta
+            If minutes > 0 Then
+                'timeRemain = timeRemain - 3
+                If seconds.ToString.Trim.Length = 1 Then
+                    ceros = "0"
+                Else
+                    ceros = ""
+                End If
+
+                'Empezamos a contar hacia atrás 
+                If ciclosSinContar <= 0 Then
+                    If ciclosSinContar = 0 Then
+                        SendToConsole("/adminsay Starting - " & lblCurrentMap.Tag & "  (" & bountyOrPointsToShow & " / Time: " & (Int(timeRemain / 60)).ToString & "m.)")
+                        SendToConsole("/adminsay Starting - " & lblCurrentMap.Tag & "  (" & bountyOrPointsToShow & " / Time: " & (Int(timeRemain / 60)).ToString & "m.)")
+                    End If
+                    lblTimeMap.Text = "Time Map : " & (Int(timeRemain / 60)).ToString & ":00 m."
+                    lblRemainTime.Text = "Rem. time : " & (minutes - 1).ToString & ":" & ceros & seconds & " m."
+                    seconds = seconds - 3
+                    If seconds = -1 Then
+                        seconds = 59
+                        minutes = minutes - 1
+                    End If
+                End If
+
+                'Esta variable volverá a tomar valor 4 (x3sec. = 12sec.) en la misma rutina
+                'que toma la variable "minutes" el tiempo al cargar un nuevo mapa
+                ciclosSinContar = ciclosSinContar - 1
+
+
+
+            ElseIf minutes = 0 Then
+                lblRemainTime.Text = "0:00 m."
+                tiempoMapaActivado = False
+            End If
+        End If
+    End Sub
+
+    Private Sub CheckProcess()
         'Controlamos si sigue abierto el Server
         Dim myProcesses() As Process
         Dim myProcess As Process
@@ -516,26 +529,27 @@ Public Class frmConsola
     Dim playerInVote As String = ""
 
     Private Sub LeerConsola()
+        TimerReadConsole.Enabled = False
+
+        gameLogReader.OpenFile(rutaCrashLog)
+        ReadConsole()
+
+        TimerReadConsole.Enabled = True
+    End Sub
+
+    Private Sub ReadConsole()
         Dim addConsole As Boolean = False
         'changedTeam = False
         Dim lineaPlayer As String = ""
         Dim PlayerLeido As String = ""
         Dim PlayerJoinOrLeave As String = ""
-        TimerReadConsole.Enabled = False
+        Dim commandsEnabled As Boolean = False
 
-        If My.Computer.FileSystem.FileExists(copiaCrash) Then
-            My.Computer.FileSystem.DeleteFile(copiaCrash)
-        End If
-        My.Computer.FileSystem.CopyFile(rutaCrashLog, copiaCrash)
-
-        reader = File.OpenText(copiaCrash)
-        For i = 0 To contaLineas
-            If i = 0 And contaLineas = 0 Then Exit For
-            reader.ReadLine()
-        Next
-        While reader.EndOfStream = False
-            lineaLeida = reader.ReadLine()
-            contaLineas = contaLineas + 1
+        While True
+            lineaLeida = gameLogReader.ReadLine(commandsEnabled)
+            If lineaLeida Is Nothing Then
+                Exit While
+            End If
 
             'Seleccionamos las líneas que añadiremos al listbox
             addConsole = False
@@ -946,7 +960,7 @@ Public Class frmConsola
                     End If
                 End If
 
-                If InStr(lineaLeida, "!mapnext") > 0 And chkMapnext.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!mapnext") > 0 And chkMapnext.Checked = True) Then
                     SendToConsole("/mapnext")
                 End If
 
@@ -958,17 +972,17 @@ Public Class frmConsola
                     chkBalance.Checked = False
                 End If
 
-                If InStr(lineaLeida, "!kill ") > 0 And chkKill.Checked = True And FindInListbox(lbBanned, Trim(Mid(lineaLeida, InStr(lineaLeida, "kick ") + 4, (Len(lineaLeida) - (InStr(lineaLeida, "kick ") + 3))))) = False Then
+                If commandsEnabled And (InStr(lineaLeida, "!kill ") > 0 And chkKill.Checked = True And FindInListbox(lbBanned, Trim(Mid(lineaLeida, InStr(lineaLeida, "kick ") + 4, (Len(lineaLeida) - (InStr(lineaLeida, "kick ") + 3))))) = False) Then
                     comando = "/kill " & Trim(Mid(lineaLeida, InStr(lineaLeida, "kill ") + 4, (Len(lineaLeida) - (InStr(lineaLeida, "kill ") + 3))))
                     SendToConsole(comando)
                 End If
 
-                If InStr(lineaLeida, "!kick ") > 0 And chkKick.Checked = True And FindInListbox(lbBanned, Trim(Mid(lineaLeida, InStr(lineaLeida, "kick ") + 4, (Len(lineaLeida) - (InStr(lineaLeida, "kick ") + 3))))) = False Then
+                If commandsEnabled And (InStr(lineaLeida, "!kick ") > 0 And chkKick.Checked = True And FindInListbox(lbBanned, Trim(Mid(lineaLeida, InStr(lineaLeida, "kick ") + 4, (Len(lineaLeida) - (InStr(lineaLeida, "kick ") + 3))))) = False) Then
                     comando = "/kick " & Trim(Mid(lineaLeida, InStr(lineaLeida, "kick ") + 4, (Len(lineaLeida) - (InStr(lineaLeida, "kick ") + 3))))
                     SendToConsole(comando)
                 End If
 
-                If InStr(lineaLeida, "!adminsay ") > 0 And chkAdminsay.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!adminsay ") > 0 And chkAdminsay.Checked = True) Then
                     comando = "/adminsay " & Trim(Mid(lineaLeida, InStr(lineaLeida, "adminsay ") + 8, (Len(lineaLeida) - (InStr(lineaLeida, "adminsay ") + 7))))
                     Dim lin As String = "-------------------------------------------------------------------------------------------------------------------------------------------------------"
 
@@ -977,10 +991,10 @@ Public Class frmConsola
                     SendToConsole("/adminsay " & Mid(lin, 1, Len(comando) - 10 + ((Len(comando) - 10) / 2)))
                 End If
 
-                If InStr(lineaLeida, "!playerlist") > 0 And chkPlayerlistAd.Checked = True And PlayerLeido <> "SERVER" Then
-                    Dim Line1 As String = "/adminsay"
-                    Dim Line2 As String = "/adminsay"
-                    Dim Line3 As String = "/adminsay"
+                If commandsEnabled And (InStr(lineaLeida, "!playerlist") > 0 And chkPlayerlistAd.Checked = True And PlayerLeido <> "SERVER") Then
+                    Dim Line1 As String = ""
+                    Dim Line2 As String = ""
+                    Dim Line3 As String = ""
                     For i = 0 To LbPlayers.Items.Count - 1
                         If Line1.Length < 75 Then
                             Line1 = Line1 & " ;  " & Replace(LbPlayers.Items(i).ToString.Trim, "    -  ", "-")
@@ -991,13 +1005,21 @@ Public Class frmConsola
                         End If
                     Next
 
-                    SendToConsole(Line1)
-                    SendToConsole(Line2)
-                    SendToConsole(Line3)
+                    If Line1.Length > 0 Then
+                        SendToConsole("/adminsay" & Line1)
+                    End If
+
+                    If Line2.Length > 0 Then
+                        SendToConsole("/adminsay" & Line2)
+                    End If
+
+                    If Line3.Length > 0 Then
+                        SendToConsole("/adminsay" & Line3)
+                    End If
 
                 End If
 
-                If InStr(lineaLeida, "!banlist") > 0 And chkBanlist.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!banlist") > 0 And chkBanlist.Checked = True) Then
                     Dim Line1 As String = "/adminsay"
                     Dim Line2 As String = "/adminsay"
                     Dim Line3 As String = "/adminsay"
@@ -1018,7 +1040,7 @@ Public Class frmConsola
                     SendToConsole(Line3)
                 End If
 
-                If InStr(lineaLeida, "!commandlist") > 0 And chkCommandlistAd.Checked = True And PlayerLeido <> "SERVER" Then
+                If commandsEnabled And (InStr(lineaLeida, "!commandlist") > 0 And chkCommandlistAd.Checked = True And PlayerLeido <> "SERVER") Then
                     'Dim Line1 As String = "/adminsay (!commandlist) ; (!mapnext) ; (!maplist) ; (!votemapnext) ; (!newadmin <name>) ; (!kill <name/id>) ; (!kick <name/id>) "
                     'Dim Line2 As String = "/adminsay (!ban <name>) ; (!unban <name>) ; (!banlist) ; (!playerlist) ; (!adminsay) ; (!servershutdown) ; (!restart) "
                     'Dim Line3 As String = "/adminsay"
@@ -1028,14 +1050,14 @@ Public Class frmConsola
                     SendToConsole("/adminsay " & commandActivAdLin3)
                 End If
 
-                If InStr(lineaLeida, "!ban ") > 0 And chkBan.Checked = True And FindInListbox(lbBanned, Trim(Mid(lineaLeida, InStr(lineaLeida, "ban ") + 3, (Len(lineaLeida) - (InStr(lineaLeida, "ban ") + 2))))) = False Then
+                If commandsEnabled And (InStr(lineaLeida, "!ban ") > 0 And chkBan.Checked = True And FindInListbox(lbBanned, Trim(Mid(lineaLeida, InStr(lineaLeida, "ban ") + 3, (Len(lineaLeida) - (InStr(lineaLeida, "ban ") + 2))))) = False) Then
                     comando = Trim(Mid(lineaLeida, InStr(lineaLeida, "ban ") + 3, (Len(lineaLeida) - (InStr(lineaLeida, "ban ") + 2))))
                     If FindInListbox(lbBanned, comando & " ") = False Then lbBanned.Items.Add(Mid(Date.Now.ToString, 1, 10) & "   " & comando & " ")
                     Call WriteFileBanned()
                     SendToConsole("/kick " & comando)
                 End If
 
-                If InStr(lineaLeida, "!unban ") > 0 And chkUnban.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!unban ") > 0 And chkUnban.Checked = True) Then
                     comando = Trim(Mid(lineaLeida, InStr(lineaLeida, "unban ") + 5, (Len(lineaLeida) - (InStr(lineaLeida, "unban ") + 4))))
                     If FindInListbox(lbBanned, comando) Then
                         For i = 0 To lbBanned.Items.Count - 1
@@ -1048,14 +1070,14 @@ Public Class frmConsola
                     Call WriteFileBanned()
                 End If
 
-                If InStr(lineaLeida, "!newadmin ") > 0 And chkNewadmin.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!newadmin ") > 0 And chkNewadmin.Checked = True) Then
                     comando = Trim(Mid(lineaLeida, InStr(lineaLeida, "newadmin ") + 8, (Len(lineaLeida) - (InStr(lineaLeida, "newadmin ") + 7))))
                     If Not lbAdmin.Items.Contains(comando) Then lbAdmin.Items.Add(comando)
                     Call WriteFileAdmins()
                     SendToConsole("/adminsay " & comando & " has been added to Admins List.")
                 End If
 
-                If InStr(lineaLeida, "!servershutdown") > 0 And chkServershutdown.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!servershutdown") > 0 And chkServershutdown.Checked = True) Then
                     vApagado = "shutdown"
                     TimerCountDown.Enabled = True
                     Timer1.Enabled = False
@@ -1066,11 +1088,10 @@ Public Class frmConsola
                     TimerReadConsoleInst.Enabled = False
                     'TimerReadPlayer.Enabled = False
                     TimeClose = 15
-                    reader.Close()
                     Exit Sub
                 End If
 
-                If InStr(lineaLeida, "!restart") > 0 And chkRestart.Checked = True And chkRestart.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!restart") > 0 And chkRestart.Checked = True And chkRestart.Checked = True) Then
                     vApagado = "restart"
                     'Usamos la variable "vRestart" (booleana) pública declarada en Module1
                     'para desde frmArmas controlar que hay que volver a iniciar el server
@@ -1085,9 +1106,14 @@ Public Class frmConsola
                     TimeClose = 15
                 End If
 
-                If InStr(lineaLeida, "!maplist") > 0 And TimerGetMapList.Enabled = False And PlayerLeido <> "SERVER" And chkMaplistAd.Checked = True Then
-                    Dim nextMapsList As String = "3 next maps are: "
-                    For i = 1 To 3
+                If commandsEnabled And (InStr(lineaLeida, "!maplist") > 0 And TimerGetMapList.Enabled = False And PlayerLeido <> "SERVER" And chkMaplistAd.Checked = True) Then
+                    Dim mapCountMin As Integer = dgMaps.Rows.Count
+                    If mapCountMin > 3 Then
+                        mapCountMin = 3
+                    End If
+                    mapCountMin = mapCountMin - 1
+                    Dim nextMapsList As String = "" & mapCountMin & " next maps are: "
+                    For i = 1 To mapCountMin
                         nextMapsList = nextMapsList & "(" & i & "- " & dgMaps.Rows(i).Cells(0).Value.ToString.Trim & " " & dgMaps.Rows(i).Cells(1).Value.ToString.Trim & ")  "
                     Next
                     TimerGetMapList.Enabled = True
@@ -1099,23 +1125,28 @@ Public Class frmConsola
                 '********************************************************************
                 '*******************COMMANDS Normal Players***************************
 
-                If InStr(lineaLeida, "!commandlist") > 0 And PlayerLeido <> "SERVER" And chkCommandlist.Checked = True Then
+                If commandsEnabled And (InStr(lineaLeida, "!commandlist") > 0 And PlayerLeido <> "SERVER" And chkCommandlist.Checked = True) Then
                     SendToConsole("/adminsay " & commandActivGeneral)
                 End If
 
-                If InStr(lineaLeida, "!maplist") > 0 And TimerGetMapList.Enabled = False And PlayerLeido <> "SERVER" And chkMaplist.Checked = True Then
-                    Dim nextMapsList As String = "3 next maps are: "
-                    For i = 1 To 3
+                If commandsEnabled And (InStr(lineaLeida, "!maplist") > 0 And TimerGetMapList.Enabled = False And PlayerLeido <> "SERVER" And chkMaplist.Checked = True) Then
+                    Dim mapCountMin As Integer = dgMaps.Rows.Count
+                    If mapCountMin > 3 Then
+                        mapCountMin = 3
+                    End If
+                    mapCountMin = mapCountMin - 1
+                    Dim nextMapsList As String = "" & mapCountMin & " next maps are: "
+                    For i = 1 To mapCountMin
                         nextMapsList = nextMapsList & "(" & i & "- " & dgMaps.Rows(i).Cells(0).Value.ToString.Trim & " " & dgMaps.Rows(i).Cells(1).Value.ToString.Trim & ")  "
                     Next
                     TimerGetMapList.Enabled = True
                     SendToConsole("/adminsay " & nextMapsList)
                 End If
 
-                If InStr(lineaLeida, "!playerlist") > 0 And chkPlayerlistAd.Checked = True And PlayerLeido <> "SERVER" Then
-                    Dim Line1 As String = "/adminsay"
-                    Dim Line2 As String = "/adminsay"
-                    Dim Line3 As String = "/adminsay"
+                If commandsEnabled And (InStr(lineaLeida, "!playerlist") > 0 And chkPlayerlistAd.Checked = True And PlayerLeido <> "SERVER") Then
+                    Dim Line1 As String = ""
+                    Dim Line2 As String = ""
+                    Dim Line3 As String = ""
                     For i = 0 To LbPlayers.Items.Count - 1
                         If Line1.Length < 75 Then
                             Line1 = Line1 & " ;  " & Replace(LbPlayers.Items(i).ToString.Trim, "    -  ", "-")
@@ -1126,18 +1157,26 @@ Public Class frmConsola
                         End If
                     Next
 
-                    SendToConsole(Line1)
-                    SendToConsole(Line2)
-                    SendToConsole(Line3)
+                    If Line1.Length > 0 Then
+                        SendToConsole("/adminsay" & Line1)
+                    End If
+
+                    If Line2.Length > 0 Then
+                        SendToConsole("/adminsay" & Line2)
+                    End If
+
+                    If Line3.Length > 0 Then
+                        SendToConsole("/adminsay" & Line3)
+                    End If
 
                 End If
 
             End If
 
 
-            If InStr(lineaLeida, "!votemapnext") > 0 And mNextVoteIsActive = False And chkVotemapnext.Checked = True _
+            If commandsEnabled And (InStr(lineaLeida, "!votemapnext") > 0 And mNextVoteIsActive = False And chkVotemapnext.Checked = True _
                Or InStr(lineaLeida, "!votekick") > 0 And mNextVoteIsActive = False And chkVotekick.Checked = True _
-               Or InStr(lineaLeida, "!voteban") > 0 And mNextVoteIsActive = False And chkVoteBan.Checked = True Then
+               Or InStr(lineaLeida, "!voteban") > 0 And mNextVoteIsActive = False And chkVoteBan.Checked = True) Then
                 playerInVote = ""
                 Dim line1 As String = ""
                 Dim line2 As String = ""
@@ -1198,7 +1237,7 @@ Public Class frmConsola
             End If
 
 
-            If InStr(lineaLeida, "!vote yes") > 0 And mNextVoteIsActive = True And InStr(lineaLeida, "Type '!vote yes'") = 0 Then
+            If commandsEnabled And (InStr(lineaLeida, "!vote yes") > 0 And mNextVoteIsActive = True And InStr(lineaLeida, "Type '!vote yes'") = 0) Then
                 If InStr(mNextPlayersVoted, PlayerLeido & " ") = 0 Then
                     mNextVotesYes = mNextVotesYes + 1
                     mNextPlayersVoted = mNextPlayersVoted & PlayerLeido & " "
@@ -1249,7 +1288,7 @@ Public Class frmConsola
             End If
 
             'mNextVoteIsActive = False
-            If InStr(lineaLeida, "Vote finished") > 0 Then
+            If commandsEnabled And (InStr(lineaLeida, "Vote finished") > 0) Then
                 SendToConsole("/adminsay Vote not Passed.  (" & mNextVotesYes.ToString.Trim & "/" & mNextNeededVotes.ToString.Trim & " votes)")
             End If
 
@@ -1271,10 +1310,6 @@ Public Class frmConsola
                 lbConsola.SelectedIndex = (lbConsola.Items.Count - 1)
             End If
         End While
-
-        reader.Close()
-
-        TimerReadConsole.Enabled = True
     End Sub
 
     'Dim LbPlayersSinId As New ListBox
@@ -1390,10 +1425,8 @@ Public Class frmConsola
     Private Sub TimerReadConsoleInst_Tick(sender As Object, e As EventArgs) Handles TimerReadConsoleInst.Tick
         TimerReadConsoleInst.Enabled = False
         LeerConsola()
-
     End Sub
 
-    Dim vHwnd As Integer
     Sub SendToConsole(vText As String)
 
         Dim LineToAdd1 As String = Mid(Date.Now, InStr(Date.Now, " ") + 1, 8) & " " & vText
@@ -1409,15 +1442,7 @@ Public Class frmConsola
         End If
 
         lbConsola.SelectedIndex = (lbConsola.Items.Count - 1)
-
-
-
-        For i As Integer = 1 To Len(vText)
-            SendMessageSTRING(vHwnd, WM_CHAR, Asc(Mid(vText, i, 1)), 0&)
-        Next i
-
-        SendMessageSTRING(vHwnd, WM_CHAR, Asc(vbCr), 0&)
-        SendMessageSTRING(vHwnd, WM_CHAR, Asc(vbLf), 0&)
+        Module1.windowSender.SendMessageToConsole(vText)
     End Sub
 
     Private Sub RecortaLineToAdd(line1 As String)
@@ -2351,7 +2376,7 @@ Public Class frmConsola
 
     Private Sub frmConsola_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.F12 Then
-            vHwnd = FindWindow("ConsoleWindowClass", vbNullString)
+            windowExist = Module1.windowSender.FindWindow()
             'MsgBox(vHwnd.ToString)
         End If
 
@@ -2470,7 +2495,7 @@ Public Class frmConsola
     Private Sub btnKickRed_Click(sender As Object, e As EventArgs) Handles btnKickRed.Click
         Dim Player As String = ""
         For i = 0 To lbRedTeam.SelectedItems.Count - 1
-            Player = (Mid(lbRedTeam.SelectedItems.Item(i), 1, 7)).Trim
+            Player = lbRedTeam.SelectedItems.Item(i).Trim
             SendToConsole("/kick " & Player & " " & cboxReasonRed.Text.ToString & " (by Mods Coj Controller)")
         Next
     End Sub
@@ -2478,7 +2503,7 @@ Public Class frmConsola
     Private Sub btnKickBlue_Click(sender As Object, e As EventArgs) Handles btnKickBlue.Click
         Dim Player As String = ""
         For i = 0 To lbBlueTeam.SelectedItems.Count - 1
-            Player = (Mid(lbBlueTeam.SelectedItems.Item(i), 1, 7)).Trim
+            Player = lbBlueTeam.SelectedItems.Item(i).Trim
             SendToConsole("/kick " & Player & " " & cboxReasonBlue.Text.ToString & " (by Mods Coj Controller)")
         Next
     End Sub
@@ -2486,7 +2511,7 @@ Public Class frmConsola
     Private Sub btnKillRed_Click(sender As Object, e As EventArgs) Handles btnKillRed.Click
         Dim Player As String = ""
         For i = 0 To lbRedTeam.SelectedItems.Count - 1
-            Player = (Mid(lbRedTeam.SelectedItems.Item(i), 1, 7)).Trim
+            Player = lbRedTeam.SelectedItems.Item(i).Trim
             SendToConsole("/kill " & Player)
         Next
     End Sub
@@ -2494,7 +2519,7 @@ Public Class frmConsola
     Private Sub btnKillBlue_Click(sender As Object, e As EventArgs) Handles btnKillBlue.Click
         Dim Player As String = ""
         For i = 0 To lbBlueTeam.SelectedItems.Count - 1
-            Player = (Mid(lbBlueTeam.SelectedItems.Item(i), 1, 7)).Trim
+            Player = lbBlueTeam.SelectedItems.Item(i).Trim
             SendToConsole("/kill " & Player)
         Next
     End Sub
@@ -2528,14 +2553,10 @@ Public Class frmConsola
         lb.Items.AddRange(arrayToOrder)
     End Sub
 
-  
+
     Private Sub btnHelp_Click() Handles btnHelp.Click
         Cursor = Cursors.WaitCursor
         Help.ShowHelp(Me, Application.StartupPath & "\CoJ Mods.chm")
         Cursor = Cursors.Default
-    End Sub
-
-    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
-
     End Sub
 End Class

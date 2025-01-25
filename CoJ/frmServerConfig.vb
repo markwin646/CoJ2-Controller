@@ -91,7 +91,7 @@ Public Class frmServerConfig
     End Sub
 
     Private Sub btnTechlandSubir_Click(sender As Object, e As EventArgs) Handles btnTechlandSubir.Click
-
+        If dgTechlandSelMaps.Rows.Count = 0 Then Exit Sub
         If dgTechlandSelMaps.CurrentRow.Index = 0 Then Exit Sub
 
         Dim ArFilaEnMovimiento(3) As String
@@ -123,6 +123,7 @@ Public Class frmServerConfig
     End Sub
 
     Private Sub btnTechlandBajar_Click(sender As Object, e As EventArgs) Handles btnTechlandBajar.Click
+        If dgTechlandSelMaps.Rows.Count = 0 Then Exit Sub
         If dgTechlandSelMaps.CurrentRow.Index = dgTechlandSelMaps.Rows.Count - 1 Then Exit Sub
 
         Dim ArFilaEnMovimiento(3) As String
@@ -157,7 +158,7 @@ Public Class frmServerConfig
 
     Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnApply.Click
 
-        If txtServerName.Text.Trim = "" Or txtServerPassword.Text.Trim = "" Or txtServerPort.Text.Trim = "" Or txtPublicSlots.Text.Trim = "" Or txtPlayersToStart.Text.Trim = "" Then
+        If txtServerName.Text.Trim = "" Or txtServerPort.Text.Trim = "" Or txtPublicSlots.Text.Trim = "" Or txtPlayersToStart.Text.Trim = "" Then
             If txtPlayersToStart.Text.Trim = "" Then
                 txtPlayersToStart.Focus()
                 txtPlayersToStart.BackColor = Color.LemonChiffon
@@ -169,10 +170,6 @@ Public Class frmServerConfig
             If txtServerPort.Text.Trim = "" Then
                 txtServerPort.Focus()
                 txtServerPort.BackColor = Color.LemonChiffon
-            End If
-            If txtServerPassword.Text.Trim = "" Then
-                txtServerPassword.Focus()
-                txtServerPassword.BackColor = Color.LemonChiffon
             End If
             If txtServerName.Text.Trim = "" Then
                 txtServerName.Focus()
@@ -339,6 +336,7 @@ Public Class frmServerConfig
     End Sub
 
     Private Sub btnCustomSubir_Click(sender As Object, e As EventArgs) Handles btnCustomSubir.Click
+        If dgCustomSelMaps.Rows.Count = 0 Then Exit Sub
         If dgCustomSelMaps.CurrentRow.Index = 0 Then Exit Sub
 
         Dim ArFilaEnMovimiento(3) As String
@@ -370,6 +368,7 @@ Public Class frmServerConfig
     End Sub
 
     Private Sub btnCustomBajar_Click(sender As Object, e As EventArgs) Handles btnCustomBajar.Click
+        If dgCustomSelMaps.Rows.Count = 0 Then Exit Sub
         If dgCustomSelMaps.CurrentRow.Index = dgCustomSelMaps.Rows.Count - 1 Then Exit Sub
 
         Dim ArFilaEnMovimiento(3) As String
@@ -467,9 +466,11 @@ Public Class frmServerConfig
         End If
 
         For i = 0 To dgAdmins.Rows.Count - 2
-            adminsUserConfig = adminsUserConfig & dgAdmins.Rows(i).Cells(0).Value.ToString.Trim & ";;"
-            adminPassConfig = adminPassConfig & dgAdmins.Rows(i).Cells(1).Value.ToString.Trim & ";;"
-            adminLevelConfig = adminLevelConfig & dgAdmins.Rows(i).Cells(2).Value.ToString.Trim & ";;"
+            If dgAdmins.Rows(i).Cells(0).Value IsNot Nothing And dgAdmins.Rows(i).Cells(1).Value IsNot Nothing And dgAdmins.Rows(i).Cells(2).Value IsNot Nothing Then
+                adminsUserConfig = adminsUserConfig & dgAdmins.Rows(i).Cells(0).Value.ToString.Trim & ";;"
+                adminPassConfig = adminPassConfig & dgAdmins.Rows(i).Cells(1).Value.ToString.Trim & ";;"
+                adminLevelConfig = adminLevelConfig & dgAdmins.Rows(i).Cells(2).Value.ToString.Trim & ";;"
+            End If
         Next
 
         writer = File.AppendText(rutaAppData & "\Config\ServerAdmins.ini")
@@ -489,19 +490,21 @@ Public Class frmServerConfig
         writer.WriteLine("")
 
         For i = 0 To dgAdmins.Rows.Count - 2
-            adminsUserConfig = dgAdmins.Rows(i).Cells(0).Value.ToString.Trim
-            adminPassConfig = dgAdmins.Rows(i).Cells(1).Value.ToString.Trim
-            adminLevelConfig = dgAdmins.Rows(i).Cells(2).Value.ToString.Trim
+            If dgAdmins.Rows(i).Cells(0).Value IsNot Nothing And dgAdmins.Rows(i).Cells(1).Value IsNot Nothing And dgAdmins.Rows(i).Cells(2).Value IsNot Nothing Then
+                adminsUserConfig = dgAdmins.Rows(i).Cells(0).Value.ToString.Trim
+                adminPassConfig = dgAdmins.Rows(i).Cells(1).Value.ToString.Trim
+                adminLevelConfig = dgAdmins.Rows(i).Cells(2).Value.ToString.Trim
 
-            If adminLevelConfig = "Standard" Then
-                adminLevelConfig = "0"
+                If adminLevelConfig = "Standard" Then
+                    adminLevelConfig = "0"
 
-            ElseIf adminLevelConfig = "Full" Then
-                adminLevelConfig = "1"
+                ElseIf adminLevelConfig = "Full" Then
+                    adminLevelConfig = "1"
 
+                End If
+
+                writer.WriteLine("Admin( """ & adminsUserConfig & """, """ & adminPassConfig & """, " & adminLevelConfig & " )")
             End If
-
-            writer.WriteLine("Admin( """ & adminsUserConfig & """, """ & adminPassConfig & """, " & adminLevelConfig & " )")
         Next
         writer.WriteLine("")
         writer.WriteLine("")

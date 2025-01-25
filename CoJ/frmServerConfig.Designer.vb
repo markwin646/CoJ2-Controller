@@ -145,29 +145,26 @@ Partial Class frmServerConfig
         Me.panelServerConfig.Controls.Add(Me.Label2)
         Me.panelServerConfig.Controls.Add(Me.txtServerName)
         Me.panelServerConfig.Controls.Add(Me.Label1)
-        Me.panelServerConfig.Location = New System.Drawing.Point(12, 21)
-        Me.panelServerConfig.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelServerConfig.Location = New System.Drawing.Point(9, 17)
         Me.panelServerConfig.Name = "panelServerConfig"
-        Me.panelServerConfig.Size = New System.Drawing.Size(430, 147)
+        Me.panelServerConfig.Size = New System.Drawing.Size(323, 120)
         Me.panelServerConfig.TabIndex = 0
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(12, 113)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Location = New System.Drawing.Point(9, 92)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(81, 17)
+        Me.Label16.Size = New System.Drawing.Size(62, 13)
         Me.Label16.TabIndex = 11
         Me.Label16.Text = "Public Slots"
         '
         'txtPublicSlots
         '
-        Me.txtPublicSlots.Location = New System.Drawing.Point(140, 110)
-        Me.txtPublicSlots.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPublicSlots.Location = New System.Drawing.Point(105, 89)
         Me.txtPublicSlots.MaxLength = 2
         Me.txtPublicSlots.Name = "txtPublicSlots"
-        Me.txtPublicSlots.Size = New System.Drawing.Size(40, 22)
+        Me.txtPublicSlots.Size = New System.Drawing.Size(31, 20)
         Me.txtPublicSlots.TabIndex = 5
         Me.txtPublicSlots.Text = "10"
         Me.txtPublicSlots.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -176,10 +173,9 @@ Partial Class frmServerConfig
         'checkFF
         '
         Me.checkFF.AutoSize = True
-        Me.checkFF.Location = New System.Drawing.Point(296, 81)
-        Me.checkFF.Margin = New System.Windows.Forms.Padding(4)
+        Me.checkFF.Location = New System.Drawing.Point(222, 66)
         Me.checkFF.Name = "checkFF"
-        Me.checkFF.Size = New System.Drawing.Size(105, 21)
+        Me.checkFF.Size = New System.Drawing.Size(82, 17)
         Me.checkFF.TabIndex = 4
         Me.checkFF.Text = "Friendly Fire"
         Me.ToolTip1.SetToolTip(Me.checkFF, "If activated, players can kill their own team players")
@@ -187,11 +183,10 @@ Partial Class frmServerConfig
         '
         'txtPlayersToStart
         '
-        Me.txtPlayersToStart.Location = New System.Drawing.Point(371, 110)
-        Me.txtPlayersToStart.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPlayersToStart.Location = New System.Drawing.Point(278, 89)
         Me.txtPlayersToStart.MaxLength = 2
         Me.txtPlayersToStart.Name = "txtPlayersToStart"
-        Me.txtPlayersToStart.Size = New System.Drawing.Size(40, 22)
+        Me.txtPlayersToStart.Size = New System.Drawing.Size(31, 20)
         Me.txtPlayersToStart.TabIndex = 6
         Me.txtPlayersToStart.Text = "1"
         Me.txtPlayersToStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -199,10 +194,9 @@ Partial Class frmServerConfig
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(263, 113)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(197, 92)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(103, 17)
+        Me.Label4.Size = New System.Drawing.Size(76, 13)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Players to start"
         '
@@ -210,72 +204,65 @@ Partial Class frmServerConfig
         '
         Me.cbInternetLan.FormattingEnabled = True
         Me.cbInternetLan.Items.AddRange(New Object() {"LAN", "Internet"})
-        Me.cbInternetLan.Location = New System.Drawing.Point(295, 46)
-        Me.cbInternetLan.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbInternetLan.Location = New System.Drawing.Point(221, 37)
         Me.cbInternetLan.Name = "cbInternetLan"
-        Me.cbInternetLan.Size = New System.Drawing.Size(116, 24)
+        Me.cbInternetLan.Size = New System.Drawing.Size(88, 21)
         Me.cbInternetLan.TabIndex = 2
         Me.cbInternetLan.Text = "LAN"
         Me.ToolTip1.SetToolTip(Me.cbInternetLan, "Select LAN or INTERNET to set up your Coj2 server.")
         '
         'txtServerPort
         '
-        Me.txtServerPort.Location = New System.Drawing.Point(140, 79)
-        Me.txtServerPort.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtServerPort.Location = New System.Drawing.Point(105, 64)
         Me.txtServerPort.MaxLength = 5
         Me.txtServerPort.Name = "txtServerPort"
-        Me.txtServerPort.Size = New System.Drawing.Size(105, 22)
+        Me.txtServerPort.Size = New System.Drawing.Size(80, 20)
         Me.txtServerPort.TabIndex = 3
-        Me.ToolTip1.SetToolTip(Me.txtServerPort, "Enter here the port you are going to use to set up your server, which have to be " & _
+        Me.ToolTip1.SetToolTip(Me.txtServerPort, "Enter here the port you are going to use to set up your server, which have to be " &
         "open in your firewall")
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 82)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(9, 67)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 17)
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Server Port"
         '
         'txtServerPassword
         '
-        Me.txtServerPassword.Location = New System.Drawing.Point(140, 46)
-        Me.txtServerPassword.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtServerPassword.Location = New System.Drawing.Point(105, 37)
         Me.txtServerPassword.MaxLength = 20
         Me.txtServerPassword.Name = "txtServerPassword"
-        Me.txtServerPassword.Size = New System.Drawing.Size(145, 22)
+        Me.txtServerPassword.Size = New System.Drawing.Size(110, 20)
         Me.txtServerPassword.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.txtServerPassword, "Choose a password for your Dedicated Server")
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 49)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(9, 40)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(115, 17)
+        Me.Label2.Size = New System.Drawing.Size(87, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Server Password"
         '
         'txtServerName
         '
-        Me.txtServerName.Location = New System.Drawing.Point(140, 12)
-        Me.txtServerName.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtServerName.Location = New System.Drawing.Point(105, 10)
         Me.txtServerName.MaxLength = 40
         Me.txtServerName.Name = "txtServerName"
-        Me.txtServerName.Size = New System.Drawing.Size(271, 22)
+        Me.txtServerName.Size = New System.Drawing.Size(204, 20)
         Me.txtServerName.TabIndex = 0
         Me.ToolTip1.SetToolTip(Me.txtServerName, "Choose a name for your Dedicated Server")
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 16)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(9, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(91, 17)
+        Me.Label1.Size = New System.Drawing.Size(69, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Server Name"
         '
@@ -286,10 +273,9 @@ Partial Class frmServerConfig
         Me.Panel1.Controls.Add(Me.gpManhunt)
         Me.Panel1.Controls.Add(Me.gpPosse)
         Me.Panel1.Controls.Add(Me.gpDeathmatch)
-        Me.Panel1.Location = New System.Drawing.Point(12, 176)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(9, 143)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(430, 267)
+        Me.Panel1.Size = New System.Drawing.Size(323, 217)
         Me.Panel1.TabIndex = 1
         '
         'gpWanted
@@ -299,11 +285,9 @@ Partial Class frmServerConfig
         Me.gpWanted.Controls.Add(Me.txtBountyWanted)
         Me.gpWanted.Controls.Add(Me.Label11)
         Me.gpWanted.Controls.Add(Me.Label12)
-        Me.gpWanted.Location = New System.Drawing.Point(222, 133)
-        Me.gpWanted.Margin = New System.Windows.Forms.Padding(4)
+        Me.gpWanted.Location = New System.Drawing.Point(166, 108)
         Me.gpWanted.Name = "gpWanted"
-        Me.gpWanted.Padding = New System.Windows.Forms.Padding(4)
-        Me.gpWanted.Size = New System.Drawing.Size(195, 117)
+        Me.gpWanted.Size = New System.Drawing.Size(146, 95)
         Me.gpWanted.TabIndex = 5
         Me.gpWanted.TabStop = False
         Me.gpWanted.Text = "Wanted"
@@ -314,31 +298,28 @@ Partial Class frmServerConfig
         Me.panelMin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelMin4.Controls.Add(Me.lblMin4)
         Me.panelMin4.Controls.Add(Me.txtTimeWanted)
-        Me.panelMin4.Location = New System.Drawing.Point(103, 74)
-        Me.panelMin4.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelMin4.Location = New System.Drawing.Point(77, 60)
         Me.panelMin4.Name = "panelMin4"
-        Me.panelMin4.Size = New System.Drawing.Size(68, 24)
+        Me.panelMin4.Size = New System.Drawing.Size(52, 20)
         Me.panelMin4.TabIndex = 103
         '
         'lblMin4
         '
         Me.lblMin4.AutoSize = True
         Me.lblMin4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblMin4.Location = New System.Drawing.Point(35, 2)
-        Me.lblMin4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblMin4.Location = New System.Drawing.Point(26, 2)
         Me.lblMin4.Name = "lblMin4"
-        Me.lblMin4.Size = New System.Drawing.Size(30, 17)
+        Me.lblMin4.Size = New System.Drawing.Size(23, 13)
         Me.lblMin4.TabIndex = 2
         Me.lblMin4.Text = "min"
         '
         'txtTimeWanted
         '
         Me.txtTimeWanted.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtTimeWanted.Location = New System.Drawing.Point(1, 4)
-        Me.txtTimeWanted.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTimeWanted.Location = New System.Drawing.Point(1, 3)
         Me.txtTimeWanted.MaxLength = 3
         Me.txtTimeWanted.Name = "txtTimeWanted"
-        Me.txtTimeWanted.Size = New System.Drawing.Size(39, 15)
+        Me.txtTimeWanted.Size = New System.Drawing.Size(29, 13)
         Me.txtTimeWanted.TabIndex = 14
         Me.txtTimeWanted.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtTimeWanted, "0 = No time limit")
@@ -346,11 +327,10 @@ Partial Class frmServerConfig
         'txtBountyWanted
         '
         Me.txtBountyWanted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBountyWanted.Location = New System.Drawing.Point(103, 32)
-        Me.txtBountyWanted.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBountyWanted.Location = New System.Drawing.Point(77, 26)
         Me.txtBountyWanted.MaxLength = 5
         Me.txtBountyWanted.Name = "txtBountyWanted"
-        Me.txtBountyWanted.Size = New System.Drawing.Size(68, 22)
+        Me.txtBountyWanted.Size = New System.Drawing.Size(52, 20)
         Me.txtBountyWanted.TabIndex = 13
         Me.txtBountyWanted.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtBountyWanted, "0 = No bounty limit")
@@ -358,20 +338,18 @@ Partial Class frmServerConfig
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(9, 76)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Location = New System.Drawing.Point(7, 62)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(72, 17)
+        Me.Label11.Size = New System.Drawing.Size(54, 13)
         Me.Label11.TabIndex = 1
         Me.Label11.Text = "Time Limit"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(9, 36)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Location = New System.Drawing.Point(7, 29)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(85, 17)
+        Me.Label12.Size = New System.Drawing.Size(64, 13)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Bounty Limit"
         '
@@ -382,11 +360,9 @@ Partial Class frmServerConfig
         Me.gpManhunt.Controls.Add(Me.txtPointsManhunt)
         Me.gpManhunt.Controls.Add(Me.Label9)
         Me.gpManhunt.Controls.Add(Me.Label10)
-        Me.gpManhunt.Location = New System.Drawing.Point(9, 133)
-        Me.gpManhunt.Margin = New System.Windows.Forms.Padding(4)
+        Me.gpManhunt.Location = New System.Drawing.Point(7, 108)
         Me.gpManhunt.Name = "gpManhunt"
-        Me.gpManhunt.Padding = New System.Windows.Forms.Padding(4)
-        Me.gpManhunt.Size = New System.Drawing.Size(198, 117)
+        Me.gpManhunt.Size = New System.Drawing.Size(148, 95)
         Me.gpManhunt.TabIndex = 4
         Me.gpManhunt.TabStop = False
         Me.gpManhunt.Text = "Manhunt"
@@ -397,31 +373,28 @@ Partial Class frmServerConfig
         Me.panelMin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelMin3.Controls.Add(Me.lblMin3)
         Me.panelMin3.Controls.Add(Me.txtTimeManhunt)
-        Me.panelMin3.Location = New System.Drawing.Point(103, 73)
-        Me.panelMin3.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelMin3.Location = New System.Drawing.Point(77, 59)
         Me.panelMin3.Name = "panelMin3"
-        Me.panelMin3.Size = New System.Drawing.Size(68, 24)
+        Me.panelMin3.Size = New System.Drawing.Size(52, 20)
         Me.panelMin3.TabIndex = 102
         '
         'lblMin3
         '
         Me.lblMin3.AutoSize = True
         Me.lblMin3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblMin3.Location = New System.Drawing.Point(36, 2)
-        Me.lblMin3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblMin3.Location = New System.Drawing.Point(27, 2)
         Me.lblMin3.Name = "lblMin3"
-        Me.lblMin3.Size = New System.Drawing.Size(30, 17)
+        Me.lblMin3.Size = New System.Drawing.Size(23, 13)
         Me.lblMin3.TabIndex = 2
         Me.lblMin3.Text = "min"
         '
         'txtTimeManhunt
         '
         Me.txtTimeManhunt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtTimeManhunt.Location = New System.Drawing.Point(1, 4)
-        Me.txtTimeManhunt.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTimeManhunt.Location = New System.Drawing.Point(1, 3)
         Me.txtTimeManhunt.MaxLength = 3
         Me.txtTimeManhunt.Name = "txtTimeManhunt"
-        Me.txtTimeManhunt.Size = New System.Drawing.Size(39, 15)
+        Me.txtTimeManhunt.Size = New System.Drawing.Size(29, 13)
         Me.txtTimeManhunt.TabIndex = 12
         Me.txtTimeManhunt.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtTimeManhunt, "0 = No time limit")
@@ -429,11 +402,10 @@ Partial Class frmServerConfig
         'txtPointsManhunt
         '
         Me.txtPointsManhunt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtPointsManhunt.Location = New System.Drawing.Point(103, 32)
-        Me.txtPointsManhunt.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPointsManhunt.Location = New System.Drawing.Point(77, 26)
         Me.txtPointsManhunt.MaxLength = 2
         Me.txtPointsManhunt.Name = "txtPointsManhunt"
-        Me.txtPointsManhunt.Size = New System.Drawing.Size(68, 22)
+        Me.txtPointsManhunt.Size = New System.Drawing.Size(52, 20)
         Me.txtPointsManhunt.TabIndex = 11
         Me.txtPointsManhunt.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtPointsManhunt, "0 = No points limit")
@@ -441,20 +413,18 @@ Partial Class frmServerConfig
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(9, 76)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(7, 62)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(72, 17)
+        Me.Label9.Size = New System.Drawing.Size(54, 13)
         Me.Label9.TabIndex = 1
         Me.Label9.Text = "Time Limit"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(9, 36)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(7, 29)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(80, 17)
+        Me.Label10.Size = New System.Drawing.Size(60, 13)
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Points Limit"
         '
@@ -465,11 +435,9 @@ Partial Class frmServerConfig
         Me.gpPosse.Controls.Add(Me.txtBountyPosse)
         Me.gpPosse.Controls.Add(Me.Label7)
         Me.gpPosse.Controls.Add(Me.Label8)
-        Me.gpPosse.Location = New System.Drawing.Point(222, 9)
-        Me.gpPosse.Margin = New System.Windows.Forms.Padding(4)
+        Me.gpPosse.Location = New System.Drawing.Point(166, 7)
         Me.gpPosse.Name = "gpPosse"
-        Me.gpPosse.Padding = New System.Windows.Forms.Padding(4)
-        Me.gpPosse.Size = New System.Drawing.Size(195, 114)
+        Me.gpPosse.Size = New System.Drawing.Size(146, 93)
         Me.gpPosse.TabIndex = 3
         Me.gpPosse.TabStop = False
         Me.gpPosse.Text = "Posse"
@@ -480,31 +448,28 @@ Partial Class frmServerConfig
         Me.panelMin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelMin2.Controls.Add(Me.lblMin2)
         Me.panelMin2.Controls.Add(Me.txtTimePosse)
-        Me.panelMin2.Location = New System.Drawing.Point(109, 72)
-        Me.panelMin2.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelMin2.Location = New System.Drawing.Point(82, 58)
         Me.panelMin2.Name = "panelMin2"
-        Me.panelMin2.Size = New System.Drawing.Size(65, 24)
+        Me.panelMin2.Size = New System.Drawing.Size(49, 20)
         Me.panelMin2.TabIndex = 101
         '
         'lblMin2
         '
         Me.lblMin2.AutoSize = True
         Me.lblMin2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblMin2.Location = New System.Drawing.Point(33, 2)
-        Me.lblMin2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblMin2.Location = New System.Drawing.Point(25, 2)
         Me.lblMin2.Name = "lblMin2"
-        Me.lblMin2.Size = New System.Drawing.Size(30, 17)
+        Me.lblMin2.Size = New System.Drawing.Size(23, 13)
         Me.lblMin2.TabIndex = 2
         Me.lblMin2.Text = "min"
         '
         'txtTimePosse
         '
         Me.txtTimePosse.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtTimePosse.Location = New System.Drawing.Point(1, 4)
-        Me.txtTimePosse.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTimePosse.Location = New System.Drawing.Point(1, 3)
         Me.txtTimePosse.MaxLength = 3
         Me.txtTimePosse.Name = "txtTimePosse"
-        Me.txtTimePosse.Size = New System.Drawing.Size(39, 15)
+        Me.txtTimePosse.Size = New System.Drawing.Size(29, 13)
         Me.txtTimePosse.TabIndex = 10
         Me.txtTimePosse.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtTimePosse, "0 = No time limit")
@@ -512,11 +477,10 @@ Partial Class frmServerConfig
         'txtBountyPosse
         '
         Me.txtBountyPosse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBountyPosse.Location = New System.Drawing.Point(109, 31)
-        Me.txtBountyPosse.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBountyPosse.Location = New System.Drawing.Point(82, 25)
         Me.txtBountyPosse.MaxLength = 5
         Me.txtBountyPosse.Name = "txtBountyPosse"
-        Me.txtBountyPosse.Size = New System.Drawing.Size(65, 22)
+        Me.txtBountyPosse.Size = New System.Drawing.Size(49, 20)
         Me.txtBountyPosse.TabIndex = 9
         Me.txtBountyPosse.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtBountyPosse, "0 = No bounty limit")
@@ -524,20 +488,18 @@ Partial Class frmServerConfig
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 75)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(11, 61)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(72, 17)
+        Me.Label7.Size = New System.Drawing.Size(54, 13)
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Time Limit"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(15, 35)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(11, 28)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(85, 17)
+        Me.Label8.Size = New System.Drawing.Size(64, 13)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Bounty Limit"
         '
@@ -548,11 +510,9 @@ Partial Class frmServerConfig
         Me.gpDeathmatch.Controls.Add(Me.txtBountyDM)
         Me.gpDeathmatch.Controls.Add(Me.Label6)
         Me.gpDeathmatch.Controls.Add(Me.Label5)
-        Me.gpDeathmatch.Location = New System.Drawing.Point(12, 9)
-        Me.gpDeathmatch.Margin = New System.Windows.Forms.Padding(4)
+        Me.gpDeathmatch.Location = New System.Drawing.Point(9, 7)
         Me.gpDeathmatch.Name = "gpDeathmatch"
-        Me.gpDeathmatch.Padding = New System.Windows.Forms.Padding(4)
-        Me.gpDeathmatch.Size = New System.Drawing.Size(195, 114)
+        Me.gpDeathmatch.Size = New System.Drawing.Size(146, 93)
         Me.gpDeathmatch.TabIndex = 2
         Me.gpDeathmatch.TabStop = False
         Me.gpDeathmatch.Text = "Deathmatch"
@@ -563,31 +523,28 @@ Partial Class frmServerConfig
         Me.panelMin1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panelMin1.Controls.Add(Me.lblMin1)
         Me.panelMin1.Controls.Add(Me.txtTimeDM)
-        Me.panelMin1.Location = New System.Drawing.Point(106, 71)
-        Me.panelMin1.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelMin1.Location = New System.Drawing.Point(80, 58)
         Me.panelMin1.Name = "panelMin1"
-        Me.panelMin1.Size = New System.Drawing.Size(68, 24)
+        Me.panelMin1.Size = New System.Drawing.Size(52, 20)
         Me.panelMin1.TabIndex = 100
         '
         'lblMin1
         '
         Me.lblMin1.AutoSize = True
         Me.lblMin1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lblMin1.Location = New System.Drawing.Point(37, 2)
-        Me.lblMin1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblMin1.Location = New System.Drawing.Point(28, 2)
         Me.lblMin1.Name = "lblMin1"
-        Me.lblMin1.Size = New System.Drawing.Size(30, 17)
+        Me.lblMin1.Size = New System.Drawing.Size(23, 13)
         Me.lblMin1.TabIndex = 2
         Me.lblMin1.Text = "min"
         '
         'txtTimeDM
         '
         Me.txtTimeDM.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtTimeDM.Location = New System.Drawing.Point(1, 4)
-        Me.txtTimeDM.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTimeDM.Location = New System.Drawing.Point(1, 3)
         Me.txtTimeDM.MaxLength = 3
         Me.txtTimeDM.Name = "txtTimeDM"
-        Me.txtTimeDM.Size = New System.Drawing.Size(39, 15)
+        Me.txtTimeDM.Size = New System.Drawing.Size(29, 13)
         Me.txtTimeDM.TabIndex = 8
         Me.txtTimeDM.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtTimeDM, "0 = No time limit")
@@ -595,11 +552,10 @@ Partial Class frmServerConfig
         'txtBountyDM
         '
         Me.txtBountyDM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtBountyDM.Location = New System.Drawing.Point(106, 32)
-        Me.txtBountyDM.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBountyDM.Location = New System.Drawing.Point(80, 26)
         Me.txtBountyDM.MaxLength = 5
         Me.txtBountyDM.Name = "txtBountyDM"
-        Me.txtBountyDM.Size = New System.Drawing.Size(68, 22)
+        Me.txtBountyDM.Size = New System.Drawing.Size(52, 20)
         Me.txtBountyDM.TabIndex = 7
         Me.txtBountyDM.Text = "0"
         Me.ToolTip1.SetToolTip(Me.txtBountyDM, "0 = No bounty limit")
@@ -607,20 +563,18 @@ Partial Class frmServerConfig
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 73)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(9, 59)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(72, 17)
+        Me.Label6.Size = New System.Drawing.Size(54, 13)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Time Limit"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 36)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(9, 29)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(85, 17)
+        Me.Label5.Size = New System.Drawing.Size(64, 13)
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Bounty Limit"
         '
@@ -629,11 +583,10 @@ Partial Class frmServerConfig
         Me.tabMaps.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tabMaps.Controls.Add(Me.tabTechlandMaps)
         Me.tabMaps.Controls.Add(Me.tabCustomMaps)
-        Me.tabMaps.Location = New System.Drawing.Point(457, 21)
-        Me.tabMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabMaps.Location = New System.Drawing.Point(343, 17)
         Me.tabMaps.Name = "tabMaps"
         Me.tabMaps.SelectedIndex = 0
-        Me.tabMaps.Size = New System.Drawing.Size(627, 640)
+        Me.tabMaps.Size = New System.Drawing.Size(470, 520)
         Me.tabMaps.TabIndex = 2
         '
         'tabTechlandMaps
@@ -647,11 +600,10 @@ Partial Class frmServerConfig
         Me.tabTechlandMaps.Controls.Add(Me.btnTechlandAdd)
         Me.tabTechlandMaps.Controls.Add(Me.cbTechlandGameMode)
         Me.tabTechlandMaps.Controls.Add(Me.lbTechlandMaps)
-        Me.tabTechlandMaps.Location = New System.Drawing.Point(4, 25)
-        Me.tabTechlandMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabTechlandMaps.Location = New System.Drawing.Point(4, 22)
         Me.tabTechlandMaps.Name = "tabTechlandMaps"
-        Me.tabTechlandMaps.Padding = New System.Windows.Forms.Padding(4)
-        Me.tabTechlandMaps.Size = New System.Drawing.Size(619, 616)
+        Me.tabTechlandMaps.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tabTechlandMaps.Size = New System.Drawing.Size(462, 494)
         Me.tabTechlandMaps.TabIndex = 0
         Me.tabTechlandMaps.Text = "Techland Maps"
         '
@@ -660,12 +612,11 @@ Partial Class frmServerConfig
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label14.Location = New System.Drawing.Point(4, 567)
-        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Location = New System.Drawing.Point(3, 461)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(528, 17)
+        Me.Label14.Size = New System.Drawing.Size(397, 13)
         Me.Label14.TabIndex = 8
-        Me.Label14.Text = "*Custom maps will never be mixed with Official Techland maps in dedicated servers" & _
+        Me.Label14.Text = "*Custom maps will never be mixed with Official Techland maps in dedicated servers" &
     ""
         '
         'dgTechlandSelMaps
@@ -686,15 +637,14 @@ Partial Class frmServerConfig
         Me.dgTechlandSelMaps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgTechlandSelMaps.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Dg2ColumTextBoxMapName, Me.Dg2ColumTextBoxGamemode, Me.Dg2ColumTextBoxMapRealName, Me.Dg2ColumTextBoxGameModeReal})
         Me.dgTechlandSelMaps.EnableHeadersVisualStyles = False
-        Me.dgTechlandSelMaps.Location = New System.Drawing.Point(334, 19)
-        Me.dgTechlandSelMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgTechlandSelMaps.Location = New System.Drawing.Point(250, 15)
         Me.dgTechlandSelMaps.MultiSelect = False
         Me.dgTechlandSelMaps.Name = "dgTechlandSelMaps"
         Me.dgTechlandSelMaps.ReadOnly = True
         Me.dgTechlandSelMaps.RowHeadersVisible = False
         Me.dgTechlandSelMaps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgTechlandSelMaps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgTechlandSelMaps.Size = New System.Drawing.Size(268, 484)
+        Me.dgTechlandSelMaps.Size = New System.Drawing.Size(201, 393)
         Me.dgTechlandSelMaps.TabIndex = 18
         Me.ToolTip1.SetToolTip(Me.dgTechlandSelMaps, "Map list to set up the server.")
         '
@@ -734,56 +684,51 @@ Partial Class frmServerConfig
         '
         'btnTechlandBajar
         '
-        Me.btnTechlandBajar.Location = New System.Drawing.Point(263, 186)
-        Me.btnTechlandBajar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTechlandBajar.Location = New System.Drawing.Point(197, 151)
         Me.btnTechlandBajar.Name = "btnTechlandBajar"
-        Me.btnTechlandBajar.Size = New System.Drawing.Size(43, 28)
+        Me.btnTechlandBajar.Size = New System.Drawing.Size(32, 23)
         Me.btnTechlandBajar.TabIndex = 6
         Me.btnTechlandBajar.TabStop = False
-        Me.btnTechlandBajar.Text = "↓"
+        Me.btnTechlandBajar.Text = "\/"
         Me.btnTechlandBajar.UseVisualStyleBackColor = True
         '
         'btnTechlandSubir
         '
-        Me.btnTechlandSubir.Location = New System.Drawing.Point(263, 84)
-        Me.btnTechlandSubir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTechlandSubir.Location = New System.Drawing.Point(197, 68)
         Me.btnTechlandSubir.Name = "btnTechlandSubir"
-        Me.btnTechlandSubir.Size = New System.Drawing.Size(43, 28)
+        Me.btnTechlandSubir.Size = New System.Drawing.Size(32, 23)
         Me.btnTechlandSubir.TabIndex = 5
         Me.btnTechlandSubir.TabStop = False
-        Me.btnTechlandSubir.Text = "↑"
+        Me.btnTechlandSubir.Text = "/\"
         Me.btnTechlandSubir.UseVisualStyleBackColor = True
         '
         'btnTechlandDel
         '
-        Me.btnTechlandDel.Location = New System.Drawing.Point(263, 153)
-        Me.btnTechlandDel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTechlandDel.Location = New System.Drawing.Point(197, 124)
         Me.btnTechlandDel.Name = "btnTechlandDel"
-        Me.btnTechlandDel.Size = New System.Drawing.Size(43, 28)
+        Me.btnTechlandDel.Size = New System.Drawing.Size(32, 23)
         Me.btnTechlandDel.TabIndex = 4
         Me.btnTechlandDel.TabStop = False
-        Me.btnTechlandDel.Text = "←"
+        Me.btnTechlandDel.Text = "<"
         Me.btnTechlandDel.UseVisualStyleBackColor = True
         '
         'btnTechlandAdd
         '
-        Me.btnTechlandAdd.Location = New System.Drawing.Point(263, 117)
-        Me.btnTechlandAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnTechlandAdd.Location = New System.Drawing.Point(197, 95)
         Me.btnTechlandAdd.Name = "btnTechlandAdd"
-        Me.btnTechlandAdd.Size = New System.Drawing.Size(43, 28)
+        Me.btnTechlandAdd.Size = New System.Drawing.Size(32, 23)
         Me.btnTechlandAdd.TabIndex = 3
         Me.btnTechlandAdd.TabStop = False
-        Me.btnTechlandAdd.Text = "→"
+        Me.btnTechlandAdd.Text = ">"
         Me.btnTechlandAdd.UseVisualStyleBackColor = True
         '
         'cbTechlandGameMode
         '
         Me.cbTechlandGameMode.FormattingEnabled = True
         Me.cbTechlandGameMode.Items.AddRange(New Object() {"Deathmatch", "Posse", "Manhunt", "Wanted", "WWL"})
-        Me.cbTechlandGameMode.Location = New System.Drawing.Point(19, 518)
-        Me.cbTechlandGameMode.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbTechlandGameMode.Location = New System.Drawing.Point(14, 421)
         Me.cbTechlandGameMode.Name = "cbTechlandGameMode"
-        Me.cbTechlandGameMode.Size = New System.Drawing.Size(219, 24)
+        Me.cbTechlandGameMode.Size = New System.Drawing.Size(165, 21)
         Me.cbTechlandGameMode.TabIndex = 17
         Me.cbTechlandGameMode.Text = "Deathmatch"
         Me.ToolTip1.SetToolTip(Me.cbTechlandGameMode, "Choose the game mode for each map when you add them.")
@@ -791,12 +736,10 @@ Partial Class frmServerConfig
         'lbTechlandMaps
         '
         Me.lbTechlandMaps.FormattingEnabled = True
-        Me.lbTechlandMaps.ItemHeight = 16
         Me.lbTechlandMaps.Items.AddRange(New Object() {"Taos Pueblo", "Burnside's Bridge", "Coffeyville", "Frisco", "Magnificent", "Nogales", "Stinking Springs", "Tombstone"})
-        Me.lbTechlandMaps.Location = New System.Drawing.Point(18, 19)
-        Me.lbTechlandMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbTechlandMaps.Location = New System.Drawing.Point(14, 15)
         Me.lbTechlandMaps.Name = "lbTechlandMaps"
-        Me.lbTechlandMaps.Size = New System.Drawing.Size(220, 484)
+        Me.lbTechlandMaps.Size = New System.Drawing.Size(166, 394)
         Me.lbTechlandMaps.TabIndex = 16
         Me.ToolTip1.SetToolTip(Me.lbTechlandMaps, "Available official map list.")
         '
@@ -812,11 +755,10 @@ Partial Class frmServerConfig
         Me.tabCustomMaps.Controls.Add(Me.btnCustomAdd)
         Me.tabCustomMaps.Controls.Add(Me.cbCustomGameMode)
         Me.tabCustomMaps.Controls.Add(Me.lbCustomMaps)
-        Me.tabCustomMaps.Location = New System.Drawing.Point(4, 25)
-        Me.tabCustomMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.tabCustomMaps.Location = New System.Drawing.Point(4, 22)
         Me.tabCustomMaps.Name = "tabCustomMaps"
-        Me.tabCustomMaps.Padding = New System.Windows.Forms.Padding(4)
-        Me.tabCustomMaps.Size = New System.Drawing.Size(619, 611)
+        Me.tabCustomMaps.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tabCustomMaps.Size = New System.Drawing.Size(462, 494)
         Me.tabCustomMaps.TabIndex = 1
         Me.tabCustomMaps.Text = "Custom Maps"
         '
@@ -825,12 +767,11 @@ Partial Class frmServerConfig
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label17.Location = New System.Drawing.Point(4, 567)
-        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label17.Location = New System.Drawing.Point(3, 461)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(528, 17)
+        Me.Label17.Size = New System.Drawing.Size(397, 13)
         Me.Label17.TabIndex = 17
-        Me.Label17.Text = "*Custom maps will never be mixed with Official Techland maps in dedicated servers" & _
+        Me.Label17.Text = "*Custom maps will never be mixed with Official Techland maps in dedicated servers" &
     ""
         '
         'Label13
@@ -838,10 +779,9 @@ Partial Class frmServerConfig
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.IndianRed
-        Me.Label13.Location = New System.Drawing.Point(4, 546)
-        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Location = New System.Drawing.Point(3, 444)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(473, 17)
+        Me.Label13.Size = New System.Drawing.Size(357, 13)
         Me.Label13.TabIndex = 4
         Me.Label13.Text = "*You should know which game modes are supported for each custom map"
         '
@@ -863,15 +803,14 @@ Partial Class frmServerConfig
         Me.dgCustomSelMaps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgCustomSelMaps.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Dg3ColumTextBoxMapName, Me.Dg3ColumTextBoxGameMode, Me.Dg3ColumTextBoxRealName, Me.Dg3ColumTextBoxGameModeReal})
         Me.dgCustomSelMaps.EnableHeadersVisualStyles = False
-        Me.dgCustomSelMaps.Location = New System.Drawing.Point(334, 19)
-        Me.dgCustomSelMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgCustomSelMaps.Location = New System.Drawing.Point(250, 15)
         Me.dgCustomSelMaps.MultiSelect = False
         Me.dgCustomSelMaps.Name = "dgCustomSelMaps"
         Me.dgCustomSelMaps.ReadOnly = True
         Me.dgCustomSelMaps.RowHeadersVisible = False
         Me.dgCustomSelMaps.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgCustomSelMaps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgCustomSelMaps.Size = New System.Drawing.Size(268, 484)
+        Me.dgCustomSelMaps.Size = New System.Drawing.Size(201, 393)
         Me.dgCustomSelMaps.TabIndex = 18
         Me.ToolTip1.SetToolTip(Me.dgCustomSelMaps, "Map list to set up the server.")
         '
@@ -911,56 +850,51 @@ Partial Class frmServerConfig
         '
         'btnCustomBajar
         '
-        Me.btnCustomBajar.Location = New System.Drawing.Point(263, 203)
-        Me.btnCustomBajar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCustomBajar.Location = New System.Drawing.Point(197, 165)
         Me.btnCustomBajar.Name = "btnCustomBajar"
-        Me.btnCustomBajar.Size = New System.Drawing.Size(43, 28)
+        Me.btnCustomBajar.Size = New System.Drawing.Size(32, 23)
         Me.btnCustomBajar.TabIndex = 13
         Me.btnCustomBajar.TabStop = False
-        Me.btnCustomBajar.Text = "↓"
+        Me.btnCustomBajar.Text = "\/"
         Me.btnCustomBajar.UseVisualStyleBackColor = True
         '
         'btnCustomSubir
         '
-        Me.btnCustomSubir.Location = New System.Drawing.Point(263, 101)
-        Me.btnCustomSubir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCustomSubir.Location = New System.Drawing.Point(197, 82)
         Me.btnCustomSubir.Name = "btnCustomSubir"
-        Me.btnCustomSubir.Size = New System.Drawing.Size(43, 28)
+        Me.btnCustomSubir.Size = New System.Drawing.Size(32, 23)
         Me.btnCustomSubir.TabIndex = 12
         Me.btnCustomSubir.TabStop = False
-        Me.btnCustomSubir.Text = "↑"
+        Me.btnCustomSubir.Text = "/\"
         Me.btnCustomSubir.UseVisualStyleBackColor = True
         '
         'btnCustomDel
         '
-        Me.btnCustomDel.Location = New System.Drawing.Point(263, 170)
-        Me.btnCustomDel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCustomDel.Location = New System.Drawing.Point(197, 138)
         Me.btnCustomDel.Name = "btnCustomDel"
-        Me.btnCustomDel.Size = New System.Drawing.Size(43, 28)
+        Me.btnCustomDel.Size = New System.Drawing.Size(32, 23)
         Me.btnCustomDel.TabIndex = 11
         Me.btnCustomDel.TabStop = False
-        Me.btnCustomDel.Text = "←"
+        Me.btnCustomDel.Text = "<"
         Me.btnCustomDel.UseVisualStyleBackColor = True
         '
         'btnCustomAdd
         '
-        Me.btnCustomAdd.Location = New System.Drawing.Point(263, 134)
-        Me.btnCustomAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCustomAdd.Location = New System.Drawing.Point(197, 109)
         Me.btnCustomAdd.Name = "btnCustomAdd"
-        Me.btnCustomAdd.Size = New System.Drawing.Size(43, 28)
+        Me.btnCustomAdd.Size = New System.Drawing.Size(32, 23)
         Me.btnCustomAdd.TabIndex = 10
         Me.btnCustomAdd.TabStop = False
-        Me.btnCustomAdd.Text = "→"
+        Me.btnCustomAdd.Text = ">"
         Me.btnCustomAdd.UseVisualStyleBackColor = True
         '
         'cbCustomGameMode
         '
         Me.cbCustomGameMode.FormattingEnabled = True
         Me.cbCustomGameMode.Items.AddRange(New Object() {"Deathmatch", "Posse", "Manhunt", "Wanted", "WWL"})
-        Me.cbCustomGameMode.Location = New System.Drawing.Point(19, 518)
-        Me.cbCustomGameMode.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbCustomGameMode.Location = New System.Drawing.Point(14, 421)
         Me.cbCustomGameMode.Name = "cbCustomGameMode"
-        Me.cbCustomGameMode.Size = New System.Drawing.Size(219, 24)
+        Me.cbCustomGameMode.Size = New System.Drawing.Size(165, 21)
         Me.cbCustomGameMode.TabIndex = 17
         Me.cbCustomGameMode.Text = "Deathmatch"
         Me.ToolTip1.SetToolTip(Me.cbCustomGameMode, "Choose the game mode for each map when you add them.")
@@ -968,21 +902,18 @@ Partial Class frmServerConfig
         'lbCustomMaps
         '
         Me.lbCustomMaps.FormattingEnabled = True
-        Me.lbCustomMaps.ItemHeight = 16
-        Me.lbCustomMaps.Location = New System.Drawing.Point(18, 19)
-        Me.lbCustomMaps.Margin = New System.Windows.Forms.Padding(4)
+        Me.lbCustomMaps.Location = New System.Drawing.Point(14, 15)
         Me.lbCustomMaps.Name = "lbCustomMaps"
-        Me.lbCustomMaps.Size = New System.Drawing.Size(220, 484)
+        Me.lbCustomMaps.Size = New System.Drawing.Size(166, 394)
         Me.lbCustomMaps.TabIndex = 16
         Me.ToolTip1.SetToolTip(Me.lbCustomMaps, "Available custom map list.")
         '
         'btnApply
         '
         Me.btnApply.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnApply.Location = New System.Drawing.Point(968, 676)
-        Me.btnApply.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnApply.Location = New System.Drawing.Point(726, 549)
         Me.btnApply.Name = "btnApply"
-        Me.btnApply.Size = New System.Drawing.Size(100, 28)
+        Me.btnApply.Size = New System.Drawing.Size(75, 23)
         Me.btnApply.TabIndex = 3
         Me.btnApply.TabStop = False
         Me.btnApply.Text = "Apply"
@@ -994,18 +925,16 @@ Partial Class frmServerConfig
         Me.Panel2.Controls.Add(Me.btnApplyAdmins)
         Me.Panel2.Controls.Add(Me.Label15)
         Me.Panel2.Controls.Add(Me.dgAdmins)
-        Me.Panel2.Location = New System.Drawing.Point(12, 472)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(9, 384)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(430, 232)
+        Me.Panel2.Size = New System.Drawing.Size(323, 189)
         Me.Panel2.TabIndex = 4
         '
         'btnApplyAdmins
         '
-        Me.btnApplyAdmins.Location = New System.Drawing.Point(291, 196)
-        Me.btnApplyAdmins.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnApplyAdmins.Location = New System.Drawing.Point(218, 159)
         Me.btnApplyAdmins.Name = "btnApplyAdmins"
-        Me.btnApplyAdmins.Size = New System.Drawing.Size(120, 28)
+        Me.btnApplyAdmins.Size = New System.Drawing.Size(90, 23)
         Me.btnApplyAdmins.TabIndex = 19
         Me.btnApplyAdmins.TabStop = False
         Me.btnApplyAdmins.Text = "Apply Admins"
@@ -1018,9 +947,8 @@ Partial Class frmServerConfig
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.Info
         Me.Label15.Location = New System.Drawing.Point(-1, 0)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(430, 28)
+        Me.Label15.Size = New System.Drawing.Size(323, 23)
         Me.Label15.TabIndex = 18
         Me.Label15.Text = "Server Admins Login"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1050,13 +978,12 @@ Partial Class frmServerConfig
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgAdmins.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgAdmins.EnableHeadersVisualStyles = False
-        Me.dgAdmins.Location = New System.Drawing.Point(-1, 28)
-        Me.dgAdmins.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgAdmins.Location = New System.Drawing.Point(-1, 23)
         Me.dgAdmins.MultiSelect = False
         Me.dgAdmins.Name = "dgAdmins"
         Me.dgAdmins.RowHeadersWidth = 15
         Me.dgAdmins.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgAdmins.Size = New System.Drawing.Size(430, 160)
+        Me.dgAdmins.Size = New System.Drawing.Size(322, 130)
         Me.dgAdmins.TabIndex = 15
         '
         'Dg1ColumTextBoxUser
@@ -1093,10 +1020,9 @@ Partial Class frmServerConfig
         '
         Me.lblEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEstado.ForeColor = System.Drawing.Color.DarkGreen
-        Me.lblEstado.Location = New System.Drawing.Point(464, 673)
-        Me.lblEstado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblEstado.Location = New System.Drawing.Point(348, 547)
         Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(476, 28)
+        Me.lblEstado.Size = New System.Drawing.Size(357, 23)
         Me.lblEstado.TabIndex = 5
         Me.lblEstado.Text = "Label Estado"
         Me.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1110,9 +1036,10 @@ Partial Class frmServerConfig
         Me.btnHelp.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnHelp.AutoSize = True
         Me.btnHelp.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHelp.Location = New System.Drawing.Point(984, 7)
+        Me.btnHelp.Location = New System.Drawing.Point(738, 6)
+        Me.btnHelp.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Size = New System.Drawing.Size(75, 29)
+        Me.btnHelp.Size = New System.Drawing.Size(56, 24)
         Me.btnHelp.TabIndex = 6
         Me.btnHelp.Text = "Help"
         Me.btnHelp.UseVisualStyleBackColor = True
@@ -1123,9 +1050,9 @@ Partial Class frmServerConfig
         '
         'frmServerConfig
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1099, 718)
+        Me.ClientSize = New System.Drawing.Size(826, 589)
         Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.lblEstado)
         Me.Controls.Add(Me.Panel2)
@@ -1135,10 +1062,9 @@ Partial Class frmServerConfig
         Me.Controls.Add(Me.panelServerConfig)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(1557, 894)
-        Me.MinimumSize = New System.Drawing.Size(1117, 764)
+        Me.MaximumSize = New System.Drawing.Size(1172, 734)
+        Me.MinimumSize = New System.Drawing.Size(842, 628)
         Me.Name = "frmServerConfig"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Coj2 Controller - Server Config"

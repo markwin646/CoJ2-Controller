@@ -65,17 +65,17 @@ Partial Class frmConsola
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtAdMessTime3 = New System.Windows.Forms.TextBox()
         Me.txtAdMess3 = New System.Windows.Forms.TextBox()
         Me.chkMess3 = New System.Windows.Forms.CheckBox()
-        Me.txtAdMessTime2 = New System.Windows.Forms.TextBox()
         Me.txtAdMess2 = New System.Windows.Forms.TextBox()
         Me.chkMess2 = New System.Windows.Forms.CheckBox()
-        Me.txtAdMessTime1 = New System.Windows.Forms.TextBox()
         Me.txtAdMess1 = New System.Windows.Forms.TextBox()
         Me.chkMess1 = New System.Windows.Forms.CheckBox()
         Me.PanelAdminMess = New System.Windows.Forms.Panel()
         Me.cboxCabMess3 = New System.Windows.Forms.ComboBox()
+        Me.txtAdMessTime1 = New System.Windows.Forms.TextBox()
+        Me.txtAdMessTime2 = New System.Windows.Forms.TextBox()
+        Me.txtAdMessTime3 = New System.Windows.Forms.TextBox()
         Me.lbConsola = New System.Windows.Forms.ListBox()
         Me.btnShutdown = New System.Windows.Forms.Button()
         Me.txtEnviaTexto = New System.Windows.Forms.TextBox()
@@ -233,7 +233,7 @@ Partial Class frmConsola
         '
         'TimerReadConsole
         '
-        Me.TimerReadConsole.Interval = 3000
+        Me.TimerReadConsole.Interval = 500
         '
         'TimerReadConsoleInst
         '
@@ -247,11 +247,11 @@ Partial Class frmConsola
         Me.TabPanel1.Controls.Add(Me.TabLogs)
         Me.TabPanel1.Controls.Add(Me.TabMaps)
         Me.TabPanel1.Controls.Add(Me.TabRules)
-        Me.TabPanel1.Location = New System.Drawing.Point(-3, 2)
-        Me.TabPanel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabPanel1.Location = New System.Drawing.Point(-2, 2)
+        Me.TabPanel1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPanel1.Name = "TabPanel1"
         Me.TabPanel1.SelectedIndex = 0
-        Me.TabPanel1.Size = New System.Drawing.Size(495, 607)
+        Me.TabPanel1.Size = New System.Drawing.Size(458, 493)
         Me.TabPanel1.TabIndex = 27
         '
         'TabChat
@@ -274,24 +274,21 @@ Partial Class frmConsola
         Me.TabChat.Controls.Add(Me.Label3)
         Me.TabChat.Controls.Add(Me.Label2)
         Me.TabChat.Controls.Add(Me.Label1)
-        Me.TabChat.Controls.Add(Me.txtAdMessTime3)
         Me.TabChat.Controls.Add(Me.txtAdMess3)
         Me.TabChat.Controls.Add(Me.chkMess3)
-        Me.TabChat.Controls.Add(Me.txtAdMessTime2)
         Me.TabChat.Controls.Add(Me.txtAdMess2)
         Me.TabChat.Controls.Add(Me.chkMess2)
-        Me.TabChat.Controls.Add(Me.txtAdMessTime1)
         Me.TabChat.Controls.Add(Me.txtAdMess1)
         Me.TabChat.Controls.Add(Me.chkMess1)
         Me.TabChat.Controls.Add(Me.PanelAdminMess)
         Me.TabChat.Controls.Add(Me.lbConsola)
         Me.TabChat.Controls.Add(Me.btnShutdown)
         Me.TabChat.Controls.Add(Me.txtEnviaTexto)
-        Me.TabChat.Location = New System.Drawing.Point(4, 25)
-        Me.TabChat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabChat.Location = New System.Drawing.Point(4, 22)
+        Me.TabChat.Margin = New System.Windows.Forms.Padding(2)
         Me.TabChat.Name = "TabChat"
-        Me.TabChat.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabChat.Size = New System.Drawing.Size(487, 578)
+        Me.TabChat.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabChat.Size = New System.Drawing.Size(450, 467)
         Me.TabChat.TabIndex = 0
         Me.TabChat.Text = "Chat"
         '
@@ -299,9 +296,10 @@ Partial Class frmConsola
         '
         Me.lblWarnings.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWarnings.ForeColor = System.Drawing.Color.IndianRed
-        Me.lblWarnings.Location = New System.Drawing.Point(184, 481)
+        Me.lblWarnings.Location = New System.Drawing.Point(138, 391)
+        Me.lblWarnings.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblWarnings.Name = "lblWarnings"
-        Me.lblWarnings.Size = New System.Drawing.Size(24, 15)
+        Me.lblWarnings.Size = New System.Drawing.Size(18, 12)
         Me.lblWarnings.TabIndex = 61
         Me.lblWarnings.Text = "0"
         Me.lblWarnings.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -311,9 +309,10 @@ Partial Class frmConsola
         '
         Me.lblWarnedPlayers.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWarnedPlayers.ForeColor = System.Drawing.Color.IndianRed
-        Me.lblWarnedPlayers.Location = New System.Drawing.Point(208, 481)
+        Me.lblWarnedPlayers.Location = New System.Drawing.Point(156, 391)
+        Me.lblWarnedPlayers.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblWarnedPlayers.Name = "lblWarnedPlayers"
-        Me.lblWarnedPlayers.Size = New System.Drawing.Size(28, 15)
+        Me.lblWarnedPlayers.Size = New System.Drawing.Size(21, 12)
         Me.lblWarnedPlayers.TabIndex = 60
         Me.lblWarnedPlayers.Text = "(0)"
         Me.lblWarnedPlayers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -326,10 +325,10 @@ Partial Class frmConsola
         Me.PanelTeams.Controls.Add(Me.Label16)
         Me.PanelTeams.Controls.Add(Me.lblTeamBlue)
         Me.PanelTeams.Controls.Add(Me.Label15)
-        Me.PanelTeams.Location = New System.Drawing.Point(288, 458)
-        Me.PanelTeams.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelTeams.Location = New System.Drawing.Point(233, 369)
+        Me.PanelTeams.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelTeams.Name = "PanelTeams"
-        Me.PanelTeams.Size = New System.Drawing.Size(199, 44)
+        Me.PanelTeams.Size = New System.Drawing.Size(212, 36)
         Me.PanelTeams.TabIndex = 59
         '
         'chkBalance
@@ -337,13 +336,13 @@ Partial Class frmConsola
         Me.chkBalance.AutoSize = True
         Me.chkBalance.Font = New System.Drawing.Font("Segoe UI Light", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkBalance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.chkBalance.Location = New System.Drawing.Point(3, 22)
-        Me.chkBalance.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkBalance.Location = New System.Drawing.Point(48, 16)
+        Me.chkBalance.Margin = New System.Windows.Forms.Padding(2)
         Me.chkBalance.Name = "chkBalance"
-        Me.chkBalance.Size = New System.Drawing.Size(98, 19)
+        Me.chkBalance.Size = New System.Drawing.Size(83, 16)
         Me.chkBalance.TabIndex = 58
         Me.chkBalance.Text = "Balance Teams"
-        Me.ToolTip1.SetToolTip(Me.chkBalance, "On/off automatic team balance in game killing last players joined to the larger t" & _
+        Me.ToolTip1.SetToolTip(Me.chkBalance, "On/off automatic team balance in game killing last players joined to the larger t" &
         "eam every 5 seconds until balance is OK.")
         Me.chkBalance.UseVisualStyleBackColor = True
         '
@@ -352,9 +351,10 @@ Partial Class frmConsola
         Me.lblTeamRed.AutoSize = True
         Me.lblTeamRed.Font = New System.Drawing.Font("Segoe UI Semibold", 6.886957!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTeamRed.ForeColor = System.Drawing.Color.Red
-        Me.lblTeamRed.Location = New System.Drawing.Point(168, 24)
+        Me.lblTeamRed.Location = New System.Drawing.Point(199, 20)
+        Me.lblTeamRed.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTeamRed.Name = "lblTeamRed"
-        Me.lblTeamRed.Size = New System.Drawing.Size(14, 15)
+        Me.lblTeamRed.Size = New System.Drawing.Size(11, 12)
         Me.lblTeamRed.TabIndex = 57
         Me.lblTeamRed.Text = "0"
         Me.ToolTip1.SetToolTip(Me.lblTeamRed, "Players currently into the Red Team OUTLAWS")
@@ -364,9 +364,10 @@ Partial Class frmConsola
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(108, 24)
+        Me.Label16.Location = New System.Drawing.Point(146, 19)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(56, 15)
+        Me.Label16.Size = New System.Drawing.Size(49, 12)
         Me.Label16.TabIndex = 55
         Me.Label16.Text = "TRed     ="
         Me.ToolTip1.SetToolTip(Me.Label16, "Players currently into the Red Team OUTLAWS")
@@ -376,9 +377,10 @@ Partial Class frmConsola
         Me.lblTeamBlue.AutoSize = True
         Me.lblTeamBlue.Font = New System.Drawing.Font("Segoe UI Semibold", 6.886957!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTeamBlue.ForeColor = System.Drawing.Color.Navy
-        Me.lblTeamBlue.Location = New System.Drawing.Point(168, 5)
+        Me.lblTeamBlue.Location = New System.Drawing.Point(199, 4)
+        Me.lblTeamBlue.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTeamBlue.Name = "lblTeamBlue"
-        Me.lblTeamBlue.Size = New System.Drawing.Size(14, 15)
+        Me.lblTeamBlue.Size = New System.Drawing.Size(11, 12)
         Me.lblTeamBlue.TabIndex = 56
         Me.lblTeamBlue.Text = "0"
         Me.ToolTip1.SetToolTip(Me.lblTeamBlue, "Players currently into the Blue Team LAWMEN")
@@ -388,9 +390,10 @@ Partial Class frmConsola
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.Navy
-        Me.Label15.Location = New System.Drawing.Point(108, 4)
+        Me.Label15.Location = New System.Drawing.Point(146, 4)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(56, 15)
+        Me.Label15.Size = New System.Drawing.Size(48, 12)
         Me.Label15.TabIndex = 54
         Me.Label15.Text = "TBlue    ="
         Me.ToolTip1.SetToolTip(Me.Label15, "Players currently into the Blue Team LAWMEN")
@@ -400,9 +403,10 @@ Partial Class frmConsola
         Me.lblBountyOrPoints.AutoSize = True
         Me.lblBountyOrPoints.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBountyOrPoints.ForeColor = System.Drawing.Color.Goldenrod
-        Me.lblBountyOrPoints.Location = New System.Drawing.Point(123, 459)
+        Me.lblBountyOrPoints.Location = New System.Drawing.Point(92, 373)
+        Me.lblBountyOrPoints.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblBountyOrPoints.Name = "lblBountyOrPoints"
-        Me.lblBountyOrPoints.Size = New System.Drawing.Size(110, 15)
+        Me.lblBountyOrPoints.Size = New System.Drawing.Size(93, 12)
         Me.lblBountyOrPoints.TabIndex = 53
         Me.lblBountyOrPoints.Text = "Bounty/Points    :  0"
         Me.lblBountyOrPoints.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -413,9 +417,10 @@ Partial Class frmConsola
         Me.lblRemainTime.AutoSize = True
         Me.lblRemainTime.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRemainTime.ForeColor = System.Drawing.Color.SeaGreen
-        Me.lblRemainTime.Location = New System.Drawing.Point(3, 459)
+        Me.lblRemainTime.Location = New System.Drawing.Point(2, 373)
+        Me.lblRemainTime.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblRemainTime.Name = "lblRemainTime"
-        Me.lblRemainTime.Size = New System.Drawing.Size(70, 15)
+        Me.lblRemainTime.Size = New System.Drawing.Size(57, 12)
         Me.lblRemainTime.TabIndex = 52
         Me.lblRemainTime.Text = "Rem. Time  :"
         Me.lblRemainTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -426,9 +431,10 @@ Partial Class frmConsola
         Me.lblTimeMap.AutoSize = True
         Me.lblTimeMap.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTimeMap.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblTimeMap.Location = New System.Drawing.Point(3, 439)
+        Me.lblTimeMap.Location = New System.Drawing.Point(2, 357)
+        Me.lblTimeMap.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTimeMap.Name = "lblTimeMap"
-        Me.lblTimeMap.Size = New System.Drawing.Size(70, 15)
+        Me.lblTimeMap.Size = New System.Drawing.Size(59, 12)
         Me.lblTimeMap.TabIndex = 51
         Me.lblTimeMap.Text = "Time Map   :"
         Me.lblTimeMap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -439,9 +445,10 @@ Partial Class frmConsola
         Me.lblNumPlayers.AutoSize = True
         Me.lblNumPlayers.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNumPlayers.ForeColor = System.Drawing.Color.Olive
-        Me.lblNumPlayers.Location = New System.Drawing.Point(397, 439)
+        Me.lblNumPlayers.Location = New System.Drawing.Point(381, 355)
+        Me.lblNumPlayers.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNumPlayers.Name = "lblNumPlayers"
-        Me.lblNumPlayers.Size = New System.Drawing.Size(73, 15)
+        Me.lblNumPlayers.Size = New System.Drawing.Size(62, 12)
         Me.lblNumPlayers.TabIndex = 49
         Me.lblNumPlayers.Text = "Players =    0"
         Me.ToolTip1.SetToolTip(Me.lblNumPlayers, "Players currently in game")
@@ -451,9 +458,10 @@ Partial Class frmConsola
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.IndianRed
-        Me.Label11.Location = New System.Drawing.Point(123, 481)
+        Me.Label11.Location = New System.Drawing.Point(92, 391)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(63, 15)
+        Me.Label11.Size = New System.Drawing.Size(51, 12)
         Me.Label11.TabIndex = 50
         Me.Label11.Text = "Warnings :"
         Me.ToolTip1.SetToolTip(Me.Label11, "Warnings happened during the game Quantity (from ""X"" Players)")
@@ -463,9 +471,10 @@ Partial Class frmConsola
         Me.lblCurrentMap.AutoSize = True
         Me.lblCurrentMap.Font = New System.Drawing.Font("Segoe UI Semibold", 6.886957!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentMap.ForeColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(90, Byte), Integer), CType(CType(110, Byte), Integer))
-        Me.lblCurrentMap.Location = New System.Drawing.Point(124, 439)
+        Me.lblCurrentMap.Location = New System.Drawing.Point(93, 357)
+        Me.lblCurrentMap.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblCurrentMap.Name = "lblCurrentMap"
-        Me.lblCurrentMap.Size = New System.Drawing.Size(82, 15)
+        Me.lblCurrentMap.Size = New System.Drawing.Size(71, 12)
         Me.lblCurrentMap.TabIndex = 48
         Me.lblCurrentMap.Text = "Current Map : "
         Me.ToolTip1.SetToolTip(Me.lblCurrentMap, "Map playing now")
@@ -477,10 +486,10 @@ Partial Class frmConsola
         Me.btnRestart.Enabled = False
         Me.btnRestart.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestart.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnRestart.Location = New System.Drawing.Point(126, 535)
-        Me.btnRestart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRestart.Location = New System.Drawing.Point(94, 435)
+        Me.btnRestart.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRestart.Name = "btnRestart"
-        Me.btnRestart.Size = New System.Drawing.Size(73, 32)
+        Me.btnRestart.Size = New System.Drawing.Size(55, 26)
         Me.btnRestart.TabIndex = 47
         Me.btnRestart.Text = "Restart"
         Me.ToolTip1.SetToolTip(Me.btnRestart, "Restart the server")
@@ -490,10 +499,10 @@ Partial Class frmConsola
         '
         Me.btnMapNext.Enabled = False
         Me.btnMapNext.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMapNext.Location = New System.Drawing.Point(311, 535)
-        Me.btnMapNext.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMapNext.Location = New System.Drawing.Point(233, 435)
+        Me.btnMapNext.Margin = New System.Windows.Forms.Padding(2)
         Me.btnMapNext.Name = "btnMapNext"
-        Me.btnMapNext.Size = New System.Drawing.Size(77, 32)
+        Me.btnMapNext.Size = New System.Drawing.Size(58, 26)
         Me.btnMapNext.TabIndex = 46
         Me.btnMapNext.Text = "/MapNext"
         Me.ToolTip1.SetToolTip(Me.btnMapNext, "Manually send a ""mapnext"" command")
@@ -503,10 +512,10 @@ Partial Class frmConsola
         '
         Me.btnPlayerList.Enabled = False
         Me.btnPlayerList.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPlayerList.Location = New System.Drawing.Point(226, 535)
-        Me.btnPlayerList.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnPlayerList.Location = New System.Drawing.Point(170, 435)
+        Me.btnPlayerList.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPlayerList.Name = "btnPlayerList"
-        Me.btnPlayerList.Size = New System.Drawing.Size(77, 32)
+        Me.btnPlayerList.Size = New System.Drawing.Size(58, 26)
         Me.btnPlayerList.TabIndex = 45
         Me.btnPlayerList.Text = "/PlayerList"
         Me.ToolTip1.SetToolTip(Me.btnPlayerList, "Manually send a ""playerlist"" command")
@@ -517,10 +526,10 @@ Partial Class frmConsola
         Me.cboxMess.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxMess.FormattingEnabled = True
         Me.cboxMess.Items.AddRange(New Object() {"/kill", "/kick", "/adminsay"})
-        Me.cboxMess.Location = New System.Drawing.Point(5, 479)
-        Me.cboxMess.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboxMess.Location = New System.Drawing.Point(4, 389)
+        Me.cboxMess.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxMess.Name = "cboxMess"
-        Me.cboxMess.Size = New System.Drawing.Size(87, 21)
+        Me.cboxMess.Size = New System.Drawing.Size(66, 20)
         Me.cboxMess.TabIndex = 44
         Me.cboxMess.Text = "/adminsay"
         Me.ToolTip1.SetToolTip(Me.cboxMess, "Choose the type of command sent via the textbox below")
@@ -530,10 +539,10 @@ Partial Class frmConsola
         Me.btnEnviar.BackColor = System.Drawing.Color.DarkKhaki
         Me.btnEnviar.Enabled = False
         Me.btnEnviar.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEnviar.Location = New System.Drawing.Point(414, 535)
-        Me.btnEnviar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnEnviar.Location = New System.Drawing.Point(396, 435)
+        Me.btnEnviar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnEnviar.Name = "btnEnviar"
-        Me.btnEnviar.Size = New System.Drawing.Size(65, 32)
+        Me.btnEnviar.Size = New System.Drawing.Size(49, 26)
         Me.btnEnviar.TabIndex = 43
         Me.btnEnviar.Text = "Send"
         Me.ToolTip1.SetToolTip(Me.btnEnviar, "Button to send the message written in the textbox above")
@@ -545,9 +554,10 @@ Partial Class frmConsola
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label3.Location = New System.Drawing.Point(-12, 0)
+        Me.Label3.Location = New System.Drawing.Point(-9, 0)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 32)
+        Me.Label3.Size = New System.Drawing.Size(24, 26)
         Me.Label3.TabIndex = 41
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -557,9 +567,10 @@ Partial Class frmConsola
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(424, 0)
+        Me.Label2.Location = New System.Drawing.Point(402, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 32)
+        Me.Label2.Size = New System.Drawing.Size(48, 26)
         Me.Label2.TabIndex = 40
         Me.Label2.Text = "seconds"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -570,37 +581,24 @@ Partial Class frmConsola
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label1.Location = New System.Drawing.Point(21, 0)
+        Me.Label1.Location = New System.Drawing.Point(16, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(399, 32)
+        Me.Label1.Size = New System.Drawing.Size(382, 26)
         Me.Label1.TabIndex = 39
         Me.Label1.Text = "Automatic Server Messages"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtAdMessTime3
-        '
-        Me.txtAdMessTime3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAdMessTime3.Enabled = False
-        Me.txtAdMessTime3.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdMessTime3.Location = New System.Drawing.Point(423, 98)
-        Me.txtAdMessTime3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtAdMessTime3.MaxLength = 3
-        Me.txtAdMessTime3.Name = "txtAdMessTime3"
-        Me.txtAdMessTime3.Size = New System.Drawing.Size(61, 22)
-        Me.txtAdMessTime3.TabIndex = 38
-        Me.txtAdMessTime3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ToolTip1.SetToolTip(Me.txtAdMessTime3, "Interval in seconds to send the command in the box on the left")
         '
         'txtAdMess3
         '
         Me.txtAdMess3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAdMess3.Enabled = False
         Me.txtAdMess3.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdMess3.Location = New System.Drawing.Point(106, 98)
-        Me.txtAdMess3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtAdMess3.Location = New System.Drawing.Point(80, 80)
+        Me.txtAdMess3.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAdMess3.MaxLength = 90
         Me.txtAdMess3.Name = "txtAdMess3"
-        Me.txtAdMess3.Size = New System.Drawing.Size(313, 22)
+        Me.txtAdMess3.Size = New System.Drawing.Size(318, 20)
         Me.txtAdMess3.TabIndex = 35
         Me.ToolTip1.SetToolTip(Me.txtAdMess3, "Send the choosen command if is checked")
         '
@@ -608,37 +606,23 @@ Partial Class frmConsola
         '
         Me.chkMess3.AutoSize = True
         Me.chkMess3.Enabled = False
-        Me.chkMess3.Location = New System.Drawing.Point(3, 102)
-        Me.chkMess3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkMess3.Location = New System.Drawing.Point(2, 83)
+        Me.chkMess3.Margin = New System.Windows.Forms.Padding(2)
         Me.chkMess3.Name = "chkMess3"
         Me.chkMess3.Size = New System.Drawing.Size(15, 14)
         Me.chkMess3.TabIndex = 32
         Me.chkMess3.UseVisualStyleBackColor = True
-        '
-        'txtAdMessTime2
-        '
-        Me.txtAdMessTime2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAdMessTime2.Enabled = False
-        Me.txtAdMessTime2.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdMessTime2.Location = New System.Drawing.Point(423, 69)
-        Me.txtAdMessTime2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtAdMessTime2.MaxLength = 3
-        Me.txtAdMessTime2.Name = "txtAdMessTime2"
-        Me.txtAdMessTime2.Size = New System.Drawing.Size(61, 22)
-        Me.txtAdMessTime2.TabIndex = 37
-        Me.txtAdMessTime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ToolTip1.SetToolTip(Me.txtAdMessTime2, "Interval in seconds to send the command in the box on the left")
         '
         'txtAdMess2
         '
         Me.txtAdMess2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAdMess2.Enabled = False
         Me.txtAdMess2.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdMess2.Location = New System.Drawing.Point(21, 69)
-        Me.txtAdMess2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtAdMess2.Location = New System.Drawing.Point(16, 56)
+        Me.txtAdMess2.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAdMess2.MaxLength = 90
         Me.txtAdMess2.Name = "txtAdMess2"
-        Me.txtAdMess2.Size = New System.Drawing.Size(398, 22)
+        Me.txtAdMess2.Size = New System.Drawing.Size(382, 20)
         Me.txtAdMess2.TabIndex = 34
         Me.ToolTip1.SetToolTip(Me.txtAdMess2, "Send an ""adminsay"" command if is checked")
         '
@@ -646,37 +630,23 @@ Partial Class frmConsola
         '
         Me.chkMess2.AutoSize = True
         Me.chkMess2.Enabled = False
-        Me.chkMess2.Location = New System.Drawing.Point(3, 73)
-        Me.chkMess2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkMess2.Location = New System.Drawing.Point(2, 59)
+        Me.chkMess2.Margin = New System.Windows.Forms.Padding(2)
         Me.chkMess2.Name = "chkMess2"
         Me.chkMess2.Size = New System.Drawing.Size(15, 14)
         Me.chkMess2.TabIndex = 31
         Me.chkMess2.UseVisualStyleBackColor = True
-        '
-        'txtAdMessTime1
-        '
-        Me.txtAdMessTime1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtAdMessTime1.Enabled = False
-        Me.txtAdMessTime1.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdMessTime1.Location = New System.Drawing.Point(423, 41)
-        Me.txtAdMessTime1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtAdMessTime1.MaxLength = 3
-        Me.txtAdMessTime1.Name = "txtAdMessTime1"
-        Me.txtAdMessTime1.Size = New System.Drawing.Size(61, 22)
-        Me.txtAdMessTime1.TabIndex = 36
-        Me.txtAdMessTime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.ToolTip1.SetToolTip(Me.txtAdMessTime1, "Interval in seconds to send the command in the box on the left")
         '
         'txtAdMess1
         '
         Me.txtAdMess1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAdMess1.Enabled = False
         Me.txtAdMess1.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAdMess1.Location = New System.Drawing.Point(21, 41)
-        Me.txtAdMess1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtAdMess1.Location = New System.Drawing.Point(16, 33)
+        Me.txtAdMess1.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAdMess1.MaxLength = 90
         Me.txtAdMess1.Name = "txtAdMess1"
-        Me.txtAdMess1.Size = New System.Drawing.Size(398, 22)
+        Me.txtAdMess1.Size = New System.Drawing.Size(382, 20)
         Me.txtAdMess1.TabIndex = 33
         Me.ToolTip1.SetToolTip(Me.txtAdMess1, "Send an ""adminsay"" command if is checked")
         '
@@ -684,8 +654,8 @@ Partial Class frmConsola
         '
         Me.chkMess1.AutoSize = True
         Me.chkMess1.Enabled = False
-        Me.chkMess1.Location = New System.Drawing.Point(3, 46)
-        Me.chkMess1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkMess1.Location = New System.Drawing.Point(2, 37)
+        Me.chkMess1.Margin = New System.Windows.Forms.Padding(2)
         Me.chkMess1.Name = "chkMess1"
         Me.chkMess1.Size = New System.Drawing.Size(15, 14)
         Me.chkMess1.TabIndex = 30
@@ -695,11 +665,14 @@ Partial Class frmConsola
         '
         Me.PanelAdminMess.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.PanelAdminMess.Controls.Add(Me.cboxCabMess3)
+        Me.PanelAdminMess.Controls.Add(Me.txtAdMessTime1)
+        Me.PanelAdminMess.Controls.Add(Me.txtAdMessTime2)
+        Me.PanelAdminMess.Controls.Add(Me.txtAdMessTime3)
         Me.PanelAdminMess.Enabled = False
-        Me.PanelAdminMess.Location = New System.Drawing.Point(-3, 34)
-        Me.PanelAdminMess.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelAdminMess.Location = New System.Drawing.Point(-2, 28)
+        Me.PanelAdminMess.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelAdminMess.Name = "PanelAdminMess"
-        Me.PanelAdminMess.Size = New System.Drawing.Size(492, 94)
+        Me.PanelAdminMess.Size = New System.Drawing.Size(452, 76)
         Me.PanelAdminMess.TabIndex = 42
         '
         'cboxCabMess3
@@ -708,13 +681,55 @@ Partial Class frmConsola
         Me.cboxCabMess3.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxCabMess3.FormattingEnabled = True
         Me.cboxCabMess3.Items.AddRange(New Object() {"/kill", "/kick", "/adminsay", "/mapnext", "/playerlist"})
-        Me.cboxCabMess3.Location = New System.Drawing.Point(25, 64)
-        Me.cboxCabMess3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboxCabMess3.Location = New System.Drawing.Point(19, 52)
+        Me.cboxCabMess3.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxCabMess3.Name = "cboxCabMess3"
-        Me.cboxCabMess3.Size = New System.Drawing.Size(79, 21)
+        Me.cboxCabMess3.Size = New System.Drawing.Size(60, 20)
         Me.cboxCabMess3.TabIndex = 25
         Me.cboxCabMess3.Text = "/adminsay"
         Me.ToolTip1.SetToolTip(Me.cboxCabMess3, "Choose the type of command sent via the textbox on the right.")
+        '
+        'txtAdMessTime1
+        '
+        Me.txtAdMessTime1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAdMessTime1.Enabled = False
+        Me.txtAdMessTime1.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAdMessTime1.Location = New System.Drawing.Point(404, 5)
+        Me.txtAdMessTime1.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtAdMessTime1.MaxLength = 3
+        Me.txtAdMessTime1.Name = "txtAdMessTime1"
+        Me.txtAdMessTime1.Size = New System.Drawing.Size(46, 20)
+        Me.txtAdMessTime1.TabIndex = 36
+        Me.txtAdMessTime1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtAdMessTime1, "Interval in seconds to send the command in the box on the left")
+        '
+        'txtAdMessTime2
+        '
+        Me.txtAdMessTime2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAdMessTime2.Enabled = False
+        Me.txtAdMessTime2.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAdMessTime2.Location = New System.Drawing.Point(404, 28)
+        Me.txtAdMessTime2.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtAdMessTime2.MaxLength = 3
+        Me.txtAdMessTime2.Name = "txtAdMessTime2"
+        Me.txtAdMessTime2.Size = New System.Drawing.Size(46, 20)
+        Me.txtAdMessTime2.TabIndex = 37
+        Me.txtAdMessTime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtAdMessTime2, "Interval in seconds to send the command in the box on the left")
+        '
+        'txtAdMessTime3
+        '
+        Me.txtAdMessTime3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAdMessTime3.Enabled = False
+        Me.txtAdMessTime3.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAdMessTime3.Location = New System.Drawing.Point(404, 52)
+        Me.txtAdMessTime3.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtAdMessTime3.MaxLength = 3
+        Me.txtAdMessTime3.Name = "txtAdMessTime3"
+        Me.txtAdMessTime3.Size = New System.Drawing.Size(46, 20)
+        Me.txtAdMessTime3.TabIndex = 38
+        Me.txtAdMessTime3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ToolTip1.SetToolTip(Me.txtAdMessTime3, "Interval in seconds to send the command in the box on the left")
         '
         'lbConsola
         '
@@ -722,11 +737,11 @@ Partial Class frmConsola
         Me.lbConsola.Enabled = False
         Me.lbConsola.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbConsola.FormattingEnabled = True
-        Me.lbConsola.Location = New System.Drawing.Point(0, 130)
-        Me.lbConsola.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbConsola.Location = New System.Drawing.Point(0, 106)
+        Me.lbConsola.Margin = New System.Windows.Forms.Padding(2)
         Me.lbConsola.Name = "lbConsola"
         Me.lbConsola.ScrollAlwaysVisible = True
-        Me.lbConsola.Size = New System.Drawing.Size(487, 290)
+        Me.lbConsola.Size = New System.Drawing.Size(454, 225)
         Me.lbConsola.TabIndex = 29
         Me.lbConsola.TabStop = False
         '
@@ -737,10 +752,10 @@ Partial Class frmConsola
         Me.btnShutdown.Enabled = False
         Me.btnShutdown.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnShutdown.ForeColor = System.Drawing.SystemColors.ControlLight
-        Me.btnShutdown.Location = New System.Drawing.Point(4, 535)
-        Me.btnShutdown.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnShutdown.Location = New System.Drawing.Point(3, 435)
+        Me.btnShutdown.Margin = New System.Windows.Forms.Padding(2)
         Me.btnShutdown.Name = "btnShutdown"
-        Me.btnShutdown.Size = New System.Drawing.Size(115, 32)
+        Me.btnShutdown.Size = New System.Drawing.Size(86, 26)
         Me.btnShutdown.TabIndex = 28
         Me.btnShutdown.Text = "Shutdown (10s)"
         Me.ToolTip1.SetToolTip(Me.btnShutdown, "Shutdown the Server")
@@ -750,11 +765,11 @@ Partial Class frmConsola
         '
         Me.txtEnviaTexto.Enabled = False
         Me.txtEnviaTexto.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEnviaTexto.Location = New System.Drawing.Point(3, 503)
-        Me.txtEnviaTexto.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtEnviaTexto.Location = New System.Drawing.Point(2, 409)
+        Me.txtEnviaTexto.Margin = New System.Windows.Forms.Padding(2)
         Me.txtEnviaTexto.MaxLength = 80
         Me.txtEnviaTexto.Name = "txtEnviaTexto"
-        Me.txtEnviaTexto.Size = New System.Drawing.Size(479, 22)
+        Me.txtEnviaTexto.Size = New System.Drawing.Size(443, 20)
         Me.txtEnviaTexto.TabIndex = 27
         Me.ToolTip1.SetToolTip(Me.txtEnviaTexto, "The text entered in this textbox will be sent through the ""send"" button")
         '
@@ -762,11 +777,11 @@ Partial Class frmConsola
         '
         Me.TabPlayers.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabPlayers.Controls.Add(Me.PanelPlayer)
-        Me.TabPlayers.Location = New System.Drawing.Point(4, 25)
-        Me.TabPlayers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabPlayers.Location = New System.Drawing.Point(4, 22)
+        Me.TabPlayers.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPlayers.Name = "TabPlayers"
-        Me.TabPlayers.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabPlayers.Size = New System.Drawing.Size(487, 578)
+        Me.TabPlayers.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPlayers.Size = New System.Drawing.Size(450, 467)
         Me.TabPlayers.TabIndex = 1
         Me.TabPlayers.Text = "Players"
         '
@@ -787,9 +802,9 @@ Partial Class frmConsola
         Me.PanelPlayer.Controls.Add(Me.btnKick)
         Me.PanelPlayer.Enabled = False
         Me.PanelPlayer.Location = New System.Drawing.Point(0, 1)
-        Me.PanelPlayer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelPlayer.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelPlayer.Name = "PanelPlayer"
-        Me.PanelPlayer.Size = New System.Drawing.Size(488, 574)
+        Me.PanelPlayer.Size = New System.Drawing.Size(366, 466)
         Me.PanelPlayer.TabIndex = 51
         '
         'Label20
@@ -798,9 +813,10 @@ Partial Class frmConsola
         Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label20.Location = New System.Drawing.Point(267, 7)
+        Me.Label20.Location = New System.Drawing.Point(200, 6)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(61, 32)
+        Me.Label20.Size = New System.Drawing.Size(46, 26)
         Me.Label20.TabIndex = 59
         Me.Label20.Text = "Date"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -810,11 +826,11 @@ Partial Class frmConsola
         '
         Me.txtNewBanned.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNewBanned.ForeColor = System.Drawing.Color.FromArgb(CType(CType(185, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.txtNewBanned.Location = New System.Drawing.Point(291, 485)
-        Me.txtNewBanned.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNewBanned.Location = New System.Drawing.Point(218, 394)
+        Me.txtNewBanned.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNewBanned.MaxLength = 40
         Me.txtNewBanned.Name = "txtNewBanned"
-        Me.txtNewBanned.Size = New System.Drawing.Size(192, 22)
+        Me.txtNewBanned.Size = New System.Drawing.Size(145, 20)
         Me.txtNewBanned.TabIndex = 58
         Me.ToolTip1.SetToolTip(Me.txtNewBanned, "The player typed here will be added to the banned list players.")
         '
@@ -823,10 +839,10 @@ Partial Class frmConsola
         Me.btnAddBannedTBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(215, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.btnAddBannedTBox.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddBannedTBox.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.btnAddBannedTBox.Location = New System.Drawing.Point(419, 522)
-        Me.btnAddBannedTBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddBannedTBox.Location = New System.Drawing.Point(314, 424)
+        Me.btnAddBannedTBox.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAddBannedTBox.Name = "btnAddBannedTBox"
-        Me.btnAddBannedTBox.Size = New System.Drawing.Size(64, 39)
+        Me.btnAddBannedTBox.Size = New System.Drawing.Size(48, 32)
         Me.btnAddBannedTBox.TabIndex = 57
         Me.btnAddBannedTBox.Text = "ADD "
         Me.ToolTip1.SetToolTip(Me.btnAddBannedTBox, "Send the player typed above to the banned list players.")
@@ -835,23 +851,22 @@ Partial Class frmConsola
         'LbPlayers
         '
         Me.LbPlayers.FormattingEnabled = True
-        Me.LbPlayers.ItemHeight = 16
-        Me.LbPlayers.Location = New System.Drawing.Point(3, 38)
-        Me.LbPlayers.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.LbPlayers.Location = New System.Drawing.Point(2, 31)
+        Me.LbPlayers.Margin = New System.Windows.Forms.Padding(2)
         Me.LbPlayers.Name = "LbPlayers"
         Me.LbPlayers.ScrollAlwaysVisible = True
         Me.LbPlayers.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.LbPlayers.Size = New System.Drawing.Size(216, 436)
+        Me.LbPlayers.Size = New System.Drawing.Size(163, 355)
         Me.LbPlayers.TabIndex = 43
         Me.ToolTip1.SetToolTip(Me.LbPlayers, "Current players in game")
         '
         'btnBan
         '
         Me.btnBan.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBan.Location = New System.Drawing.Point(225, 146)
-        Me.btnBan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBan.Location = New System.Drawing.Point(169, 119)
+        Me.btnBan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBan.Name = "btnBan"
-        Me.btnBan.Size = New System.Drawing.Size(35, 39)
+        Me.btnBan.Size = New System.Drawing.Size(26, 32)
         Me.btnBan.TabIndex = 50
         Me.btnBan.Text = ">>"
         Me.ToolTip1.SetToolTip(Me.btnBan, "Add selected players to Banned Players list.")
@@ -863,9 +878,10 @@ Partial Class frmConsola
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label5.Location = New System.Drawing.Point(43, 6)
+        Me.Label5.Location = New System.Drawing.Point(32, 5)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(176, 32)
+        Me.Label5.Size = New System.Drawing.Size(132, 26)
         Me.Label5.TabIndex = 41
         Me.Label5.Text = "Players in Game"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -875,10 +891,10 @@ Partial Class frmConsola
         '
         Me.btnClearBan.BackColor = System.Drawing.Color.DarkKhaki
         Me.btnClearBan.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearBan.Location = New System.Drawing.Point(291, 523)
-        Me.btnClearBan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnClearBan.Location = New System.Drawing.Point(218, 425)
+        Me.btnClearBan.Margin = New System.Windows.Forms.Padding(2)
         Me.btnClearBan.Name = "btnClearBan"
-        Me.btnClearBan.Size = New System.Drawing.Size(107, 39)
+        Me.btnClearBan.Size = New System.Drawing.Size(80, 32)
         Me.btnClearBan.TabIndex = 49
         Me.btnClearBan.Text = "Unban " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Selected Players"
         Me.ToolTip1.SetToolTip(Me.btnClearBan, "Unban all selected players in the banned list players above.")
@@ -890,9 +906,10 @@ Partial Class frmConsola
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label4.Location = New System.Drawing.Point(3, 6)
+        Me.Label4.Location = New System.Drawing.Point(2, 5)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 32)
+        Me.Label4.Size = New System.Drawing.Size(28, 26)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "Id."
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -902,12 +919,13 @@ Partial Class frmConsola
         '
         Me.lbBanned.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbBanned.FormattingEnabled = True
-        Me.lbBanned.Location = New System.Drawing.Point(267, 38)
-        Me.lbBanned.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbBanned.ItemHeight = 12
+        Me.lbBanned.Location = New System.Drawing.Point(200, 31)
+        Me.lbBanned.Margin = New System.Windows.Forms.Padding(2)
         Me.lbBanned.Name = "lbBanned"
         Me.lbBanned.ScrollAlwaysVisible = True
         Me.lbBanned.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbBanned.Size = New System.Drawing.Size(219, 433)
+        Me.lbBanned.Size = New System.Drawing.Size(165, 352)
         Me.lbBanned.TabIndex = 48
         Me.ToolTip1.SetToolTip(Me.lbBanned, "Current banned players in this server.")
         '
@@ -917,9 +935,10 @@ Partial Class frmConsola
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label6.Location = New System.Drawing.Point(331, 7)
+        Me.Label6.Location = New System.Drawing.Point(248, 6)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(155, 32)
+        Me.Label6.Size = New System.Drawing.Size(117, 26)
         Me.Label6.TabIndex = 44
         Me.Label6.Text = "Banned Players List"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -930,11 +949,11 @@ Partial Class frmConsola
         Me.cboxReason.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxReason.FormattingEnabled = True
         Me.cboxReason.Items.AddRange(New Object() {"No reason", "Cheater", "Annoying player", "Teamkiller"})
-        Me.cboxReason.Location = New System.Drawing.Point(92, 486)
-        Me.cboxReason.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboxReason.Location = New System.Drawing.Point(69, 395)
+        Me.cboxReason.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxReason.MaxLength = 20
         Me.cboxReason.Name = "cboxReason"
-        Me.cboxReason.Size = New System.Drawing.Size(127, 21)
+        Me.cboxReason.Size = New System.Drawing.Size(96, 20)
         Me.cboxReason.TabIndex = 47
         Me.cboxReason.Text = "No reason"
         Me.ToolTip1.SetToolTip(Me.cboxReason, "Reasons that add to the message sent when you kick out players.")
@@ -942,10 +961,10 @@ Partial Class frmConsola
         'btnKill
         '
         Me.btnKill.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKill.Location = New System.Drawing.Point(5, 522)
-        Me.btnKill.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKill.Location = New System.Drawing.Point(4, 424)
+        Me.btnKill.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKill.Name = "btnKill"
-        Me.btnKill.Size = New System.Drawing.Size(94, 40)
+        Me.btnKill.Size = New System.Drawing.Size(70, 32)
         Me.btnKill.TabIndex = 45
         Me.btnKill.Text = "Kill Selected"
         Me.ToolTip1.SetToolTip(Me.btnKill, "Kill al selected players in the list above")
@@ -954,10 +973,10 @@ Partial Class frmConsola
         'btnKick
         '
         Me.btnKick.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKick.Location = New System.Drawing.Point(124, 522)
-        Me.btnKick.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKick.Location = New System.Drawing.Point(93, 424)
+        Me.btnKick.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKick.Name = "btnKick"
-        Me.btnKick.Size = New System.Drawing.Size(94, 40)
+        Me.btnKick.Size = New System.Drawing.Size(70, 32)
         Me.btnKick.TabIndex = 46
         Me.btnKick.Text = "Kick Selected"
         Me.ToolTip1.SetToolTip(Me.btnKick, "Kick out all selected players in the list above .")
@@ -968,11 +987,11 @@ Partial Class frmConsola
         Me.TabTeams.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabTeams.Controls.Add(Me.PanelTabTeams)
         Me.TabTeams.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabTeams.Location = New System.Drawing.Point(4, 25)
-        Me.TabTeams.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabTeams.Location = New System.Drawing.Point(4, 22)
+        Me.TabTeams.Margin = New System.Windows.Forms.Padding(2)
         Me.TabTeams.Name = "TabTeams"
-        Me.TabTeams.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabTeams.Size = New System.Drawing.Size(487, 578)
+        Me.TabTeams.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabTeams.Size = New System.Drawing.Size(450, 467)
         Me.TabTeams.TabIndex = 5
         Me.TabTeams.Text = "Teams"
         '
@@ -989,9 +1008,10 @@ Partial Class frmConsola
         Me.PanelTabTeams.Controls.Add(Me.cboxReasonRed)
         Me.PanelTabTeams.Controls.Add(Me.btnKickRed)
         Me.PanelTabTeams.Controls.Add(Me.btnKillRed)
-        Me.PanelTabTeams.Location = New System.Drawing.Point(3, 2)
+        Me.PanelTabTeams.Location = New System.Drawing.Point(2, 2)
+        Me.PanelTabTeams.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelTabTeams.Name = "PanelTabTeams"
-        Me.PanelTabTeams.Size = New System.Drawing.Size(487, 578)
+        Me.PanelTabTeams.Size = New System.Drawing.Size(365, 470)
         Me.PanelTabTeams.TabIndex = 28
         '
         'chkBalance2
@@ -999,13 +1019,13 @@ Partial Class frmConsola
         Me.chkBalance2.AutoSize = True
         Me.chkBalance2.Font = New System.Drawing.Font("Segoe UI Light", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkBalance2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(90, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.chkBalance2.Location = New System.Drawing.Point(195, 507)
-        Me.chkBalance2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkBalance2.Location = New System.Drawing.Point(146, 412)
+        Me.chkBalance2.Margin = New System.Windows.Forms.Padding(2)
         Me.chkBalance2.Name = "chkBalance2"
-        Me.chkBalance2.Size = New System.Drawing.Size(98, 19)
+        Me.chkBalance2.Size = New System.Drawing.Size(83, 16)
         Me.chkBalance2.TabIndex = 59
         Me.chkBalance2.Text = "Balance Teams"
-        Me.ToolTip1.SetToolTip(Me.chkBalance2, "On/off automatic team balance in game killing last players joined to the larger t" & _
+        Me.ToolTip1.SetToolTip(Me.chkBalance2, "On/off automatic team balance in game killing last players joined to the larger t" &
         "eam every 5 seconds until balance is OK.")
         Me.chkBalance2.UseVisualStyleBackColor = True
         '
@@ -1013,13 +1033,12 @@ Partial Class frmConsola
         '
         Me.lbRedTeam.ForeColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.lbRedTeam.FormattingEnabled = True
-        Me.lbRedTeam.ItemHeight = 17
-        Me.lbRedTeam.Location = New System.Drawing.Point(-2, 36)
-        Me.lbRedTeam.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbRedTeam.Location = New System.Drawing.Point(-2, 29)
+        Me.lbRedTeam.Margin = New System.Windows.Forms.Padding(2)
         Me.lbRedTeam.Name = "lbRedTeam"
         Me.lbRedTeam.ScrollAlwaysVisible = True
         Me.lbRedTeam.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbRedTeam.Size = New System.Drawing.Size(239, 429)
+        Me.lbRedTeam.Size = New System.Drawing.Size(180, 342)
         Me.lbRedTeam.TabIndex = 50
         Me.ToolTip1.SetToolTip(Me.lbRedTeam, "Current players in Red team OUTLAWS")
         '
@@ -1029,11 +1048,11 @@ Partial Class frmConsola
         Me.cboxReasonBlue.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxReasonBlue.FormattingEnabled = True
         Me.cboxReasonBlue.Items.AddRange(New Object() {"Balance", "No reason", "Cheater", "Annoying player", "Teamkiller"})
-        Me.cboxReasonBlue.Location = New System.Drawing.Point(315, 517)
-        Me.cboxReasonBlue.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboxReasonBlue.Location = New System.Drawing.Point(236, 420)
+        Me.cboxReasonBlue.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxReasonBlue.MaxLength = 20
         Me.cboxReasonBlue.Name = "cboxReasonBlue"
-        Me.cboxReasonBlue.Size = New System.Drawing.Size(146, 25)
+        Me.cboxReasonBlue.Size = New System.Drawing.Size(110, 21)
         Me.cboxReasonBlue.TabIndex = 58
         Me.cboxReasonBlue.Text = "Balance"
         Me.ToolTip1.SetToolTip(Me.cboxReasonBlue, "Cause for which a Blue player is kick out.")
@@ -1044,9 +1063,10 @@ Partial Class frmConsola
         Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label17.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label17.Location = New System.Drawing.Point(-2, 5)
+        Me.Label17.Location = New System.Drawing.Point(-2, 4)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(239, 32)
+        Me.Label17.Size = New System.Drawing.Size(180, 26)
         Me.Label17.TabIndex = 49
         Me.Label17.Text = "Red Team OUTLAWS"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1056,10 +1076,10 @@ Partial Class frmConsola
         '
         Me.btnKillBlue.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnKillBlue.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKillBlue.Location = New System.Drawing.Point(315, 486)
-        Me.btnKillBlue.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKillBlue.Location = New System.Drawing.Point(236, 395)
+        Me.btnKillBlue.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKillBlue.Name = "btnKillBlue"
-        Me.btnKillBlue.Size = New System.Drawing.Size(62, 27)
+        Me.btnKillBlue.Size = New System.Drawing.Size(46, 22)
         Me.btnKillBlue.TabIndex = 56
         Me.btnKillBlue.Text = "KILL"
         Me.ToolTip1.SetToolTip(Me.btnKillBlue, "Kill selected players in Blue team LAWMEN.")
@@ -1071,9 +1091,10 @@ Partial Class frmConsola
         Me.Label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label18.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label18.Location = New System.Drawing.Point(244, 5)
+        Me.Label18.Location = New System.Drawing.Point(183, 4)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(240, 32)
+        Me.Label18.Size = New System.Drawing.Size(180, 26)
         Me.Label18.TabIndex = 51
         Me.Label18.Text = "Blue Team LAWMEN"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1083,10 +1104,10 @@ Partial Class frmConsola
         '
         Me.btnKickBlue.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnKickBlue.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKickBlue.Location = New System.Drawing.Point(399, 486)
-        Me.btnKickBlue.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKickBlue.Location = New System.Drawing.Point(299, 395)
+        Me.btnKickBlue.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKickBlue.Name = "btnKickBlue"
-        Me.btnKickBlue.Size = New System.Drawing.Size(62, 27)
+        Me.btnKickBlue.Size = New System.Drawing.Size(46, 22)
         Me.btnKickBlue.TabIndex = 57
         Me.btnKickBlue.Text = "KICK"
         Me.ToolTip1.SetToolTip(Me.btnKickBlue, "Kick out selected players in Blue team LAWMEN by the reason chosen below.")
@@ -1096,13 +1117,12 @@ Partial Class frmConsola
         '
         Me.lbBlueTeam.ForeColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.lbBlueTeam.FormattingEnabled = True
-        Me.lbBlueTeam.ItemHeight = 17
-        Me.lbBlueTeam.Location = New System.Drawing.Point(244, 36)
-        Me.lbBlueTeam.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbBlueTeam.Location = New System.Drawing.Point(183, 29)
+        Me.lbBlueTeam.Margin = New System.Windows.Forms.Padding(2)
         Me.lbBlueTeam.Name = "lbBlueTeam"
         Me.lbBlueTeam.ScrollAlwaysVisible = True
         Me.lbBlueTeam.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbBlueTeam.Size = New System.Drawing.Size(240, 429)
+        Me.lbBlueTeam.Size = New System.Drawing.Size(181, 342)
         Me.lbBlueTeam.TabIndex = 52
         Me.ToolTip1.SetToolTip(Me.lbBlueTeam, "Current players in Blue team LAWMEN")
         '
@@ -1112,11 +1132,11 @@ Partial Class frmConsola
         Me.cboxReasonRed.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboxReasonRed.FormattingEnabled = True
         Me.cboxReasonRed.Items.AddRange(New Object() {"Balance", "No reason", "Cheater", "Annoying player", "Teamkiller"})
-        Me.cboxReasonRed.Location = New System.Drawing.Point(14, 517)
-        Me.cboxReasonRed.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.cboxReasonRed.Location = New System.Drawing.Point(10, 420)
+        Me.cboxReasonRed.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxReasonRed.MaxLength = 20
         Me.cboxReasonRed.Name = "cboxReasonRed"
-        Me.cboxReasonRed.Size = New System.Drawing.Size(146, 25)
+        Me.cboxReasonRed.Size = New System.Drawing.Size(110, 21)
         Me.cboxReasonRed.TabIndex = 55
         Me.cboxReasonRed.Text = "Balance"
         Me.ToolTip1.SetToolTip(Me.cboxReasonRed, "Cause for which a Red player is kick out.")
@@ -1125,10 +1145,10 @@ Partial Class frmConsola
         '
         Me.btnKickRed.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.btnKickRed.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKickRed.Location = New System.Drawing.Point(98, 486)
-        Me.btnKickRed.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKickRed.Location = New System.Drawing.Point(74, 395)
+        Me.btnKickRed.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKickRed.Name = "btnKickRed"
-        Me.btnKickRed.Size = New System.Drawing.Size(62, 27)
+        Me.btnKickRed.Size = New System.Drawing.Size(46, 22)
         Me.btnKickRed.TabIndex = 54
         Me.btnKickRed.Text = "KICK"
         Me.ToolTip1.SetToolTip(Me.btnKickRed, "Kick out selected players in Red team OUTLAWS by the reason chosen below." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
@@ -1138,10 +1158,10 @@ Partial Class frmConsola
         '
         Me.btnKillRed.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(88, Byte), Integer))
         Me.btnKillRed.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnKillRed.Location = New System.Drawing.Point(14, 486)
-        Me.btnKillRed.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnKillRed.Location = New System.Drawing.Point(10, 395)
+        Me.btnKillRed.Margin = New System.Windows.Forms.Padding(2)
         Me.btnKillRed.Name = "btnKillRed"
-        Me.btnKillRed.Size = New System.Drawing.Size(62, 27)
+        Me.btnKillRed.Size = New System.Drawing.Size(46, 22)
         Me.btnKillRed.TabIndex = 53
         Me.btnKillRed.Text = "KILL"
         Me.ToolTip1.SetToolTip(Me.btnKillRed, "Kill selected players in Red team OUTLAWS.")
@@ -1151,11 +1171,11 @@ Partial Class frmConsola
         '
         Me.TabAdmins.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TabAdmins.Controls.Add(Me.PanelAdmins)
-        Me.TabAdmins.Location = New System.Drawing.Point(4, 25)
-        Me.TabAdmins.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabAdmins.Location = New System.Drawing.Point(4, 22)
+        Me.TabAdmins.Margin = New System.Windows.Forms.Padding(2)
         Me.TabAdmins.Name = "TabAdmins"
-        Me.TabAdmins.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabAdmins.Size = New System.Drawing.Size(487, 578)
+        Me.TabAdmins.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabAdmins.Size = New System.Drawing.Size(450, 467)
         Me.TabAdmins.TabIndex = 2
         Me.TabAdmins.Text = "Admins"
         '
@@ -1175,9 +1195,9 @@ Partial Class frmConsola
         Me.PanelAdmins.Controls.Add(Me.Label9)
         Me.PanelAdmins.Enabled = False
         Me.PanelAdmins.Location = New System.Drawing.Point(0, 1)
-        Me.PanelAdmins.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PanelAdmins.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelAdmins.Name = "PanelAdmins"
-        Me.PanelAdmins.Size = New System.Drawing.Size(488, 574)
+        Me.PanelAdmins.Size = New System.Drawing.Size(366, 466)
         Me.PanelAdmins.TabIndex = 52
         '
         'Label14
@@ -1185,9 +1205,10 @@ Partial Class frmConsola
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(58, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(339, 390)
+        Me.Label14.Location = New System.Drawing.Point(254, 317)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(109, 15)
+        Me.Label14.Size = New System.Drawing.Size(90, 12)
         Me.Label14.TabIndex = 57
         Me.Label14.Text = "General Commands"
         Me.ToolTip1.SetToolTip(Me.Label14, "Commans for all players")
@@ -1196,20 +1217,20 @@ Partial Class frmConsola
         '
         Me.txtNewAdmin.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNewAdmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.txtNewAdmin.Location = New System.Drawing.Point(315, 313)
-        Me.txtNewAdmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtNewAdmin.Location = New System.Drawing.Point(236, 254)
+        Me.txtNewAdmin.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNewAdmin.Name = "txtNewAdmin"
-        Me.txtNewAdmin.Size = New System.Drawing.Size(167, 22)
+        Me.txtNewAdmin.Size = New System.Drawing.Size(126, 20)
         Me.txtNewAdmin.TabIndex = 56
         Me.ToolTip1.SetToolTip(Me.txtNewAdmin, "Introduce name player to add to admin list")
         '
         'btnAddAdminTbox
         '
         Me.btnAddAdminTbox.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddAdminTbox.Location = New System.Drawing.Point(315, 346)
-        Me.btnAddAdminTbox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddAdminTbox.Location = New System.Drawing.Point(236, 281)
+        Me.btnAddAdminTbox.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAddAdminTbox.Name = "btnAddAdminTbox"
-        Me.btnAddAdminTbox.Size = New System.Drawing.Size(59, 28)
+        Me.btnAddAdminTbox.Size = New System.Drawing.Size(44, 23)
         Me.btnAddAdminTbox.TabIndex = 55
         Me.btnAddAdminTbox.Text = "ADD "
         Me.ToolTip1.SetToolTip(Me.btnAddAdminTbox, "Adds the gamer written above to Admins List")
@@ -1235,10 +1256,10 @@ Partial Class frmConsola
         Me.Panel1.Controls.Add(Me.chkKill)
         Me.Panel1.Controls.Add(Me.chkNewadmin)
         Me.Panel1.Controls.Add(Me.chkMapnext)
-        Me.Panel1.Location = New System.Drawing.Point(1, 406)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel1.Location = New System.Drawing.Point(1, 330)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(483, 163)
+        Me.Panel1.Size = New System.Drawing.Size(363, 133)
         Me.Panel1.TabIndex = 54
         Me.ToolTip1.SetToolTip(Me.Panel1, "Commands exclusively for admin")
         '
@@ -1247,10 +1268,10 @@ Partial Class frmConsola
         Me.chkAddWord.AutoSize = True
         Me.chkAddWord.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkAddWord.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkAddWord.Location = New System.Drawing.Point(149, 121)
-        Me.chkAddWord.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkAddWord.Location = New System.Drawing.Point(112, 98)
+        Me.chkAddWord.Margin = New System.Windows.Forms.Padding(2)
         Me.chkAddWord.Name = "chkAddWord"
-        Me.chkAddWord.Size = New System.Drawing.Size(122, 19)
+        Me.chkAddWord.Size = New System.Drawing.Size(105, 16)
         Me.chkAddWord.TabIndex = 70
         Me.chkAddWord.Text = "!addword <word>"
         Me.ToolTip1.SetToolTip(Me.chkAddWord, "Add typed word to list forgiven words")
@@ -1263,13 +1284,13 @@ Partial Class frmConsola
         Me.chkBalanceAd.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkBalanceAd.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkBalanceAd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkBalanceAd.Location = New System.Drawing.Point(149, 101)
-        Me.chkBalanceAd.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkBalanceAd.Location = New System.Drawing.Point(112, 82)
+        Me.chkBalanceAd.Margin = New System.Windows.Forms.Padding(2)
         Me.chkBalanceAd.Name = "chkBalanceAd"
-        Me.chkBalanceAd.Size = New System.Drawing.Size(109, 19)
+        Me.chkBalanceAd.Size = New System.Drawing.Size(94, 16)
         Me.chkBalanceAd.TabIndex = 69
         Me.chkBalanceAd.Text = "!balance yes/no"
-        Me.ToolTip1.SetToolTip(Me.chkBalanceAd, "On/off automatic team balance in game killing last players joined to the larger t" & _
+        Me.ToolTip1.SetToolTip(Me.chkBalanceAd, "On/off automatic team balance in game killing last players joined to the larger t" &
         "eam every 5 seconds until balance is OK.")
         Me.chkBalanceAd.UseVisualStyleBackColor = True
         '
@@ -1280,10 +1301,10 @@ Partial Class frmConsola
         Me.chkMaplistAd.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkMaplistAd.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkMaplistAd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkMaplistAd.Location = New System.Drawing.Point(149, 81)
-        Me.chkMaplistAd.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkMaplistAd.Location = New System.Drawing.Point(112, 66)
+        Me.chkMaplistAd.Margin = New System.Windows.Forms.Padding(2)
         Me.chkMaplistAd.Name = "chkMaplistAd"
-        Me.chkMaplistAd.Size = New System.Drawing.Size(68, 19)
+        Me.chkMaplistAd.Size = New System.Drawing.Size(58, 16)
         Me.chkMaplistAd.TabIndex = 68
         Me.chkMaplistAd.Text = "!maplist"
         Me.ToolTip1.SetToolTip(Me.chkMaplistAd, "Show the following three maps in the game to all players")
@@ -1298,10 +1319,10 @@ Partial Class frmConsola
         Me.Panel2.Controls.Add(Me.chkVotemapnext)
         Me.Panel2.Controls.Add(Me.chkPlayerlist)
         Me.Panel2.Controls.Add(Me.chkCommandlist)
-        Me.Panel2.Location = New System.Drawing.Point(312, -1)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Location = New System.Drawing.Point(234, -1)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(173, 163)
+        Me.Panel2.Size = New System.Drawing.Size(130, 133)
         Me.Panel2.TabIndex = 67
         Me.ToolTip1.SetToolTip(Me.Panel2, "Commands for all players")
         '
@@ -1312,10 +1333,10 @@ Partial Class frmConsola
         Me.chkVoteBan.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkVoteBan.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkVoteBan.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.chkVoteBan.Location = New System.Drawing.Point(8, 101)
-        Me.chkVoteBan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkVoteBan.Location = New System.Drawing.Point(6, 82)
+        Me.chkVoteBan.Margin = New System.Windows.Forms.Padding(2)
         Me.chkVoteBan.Name = "chkVoteBan"
-        Me.chkVoteBan.Size = New System.Drawing.Size(121, 19)
+        Me.chkVoteBan.Size = New System.Drawing.Size(105, 16)
         Me.chkVoteBan.TabIndex = 67
         Me.chkVoteBan.Text = "!voteban <name>"
         Me.ToolTip1.SetToolTip(Me.chkVoteBan, "Starts a round of voting to ban to the player written below.")
@@ -1328,10 +1349,10 @@ Partial Class frmConsola
         Me.chkVotekick.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkVotekick.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkVotekick.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.chkVotekick.Location = New System.Drawing.Point(8, 81)
-        Me.chkVotekick.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkVotekick.Location = New System.Drawing.Point(6, 66)
+        Me.chkVotekick.Margin = New System.Windows.Forms.Padding(2)
         Me.chkVotekick.Name = "chkVotekick"
-        Me.chkVotekick.Size = New System.Drawing.Size(137, 19)
+        Me.chkVotekick.Size = New System.Drawing.Size(117, 16)
         Me.chkVotekick.TabIndex = 66
         Me.chkVotekick.Text = "!votekick <name/id>"
         Me.ToolTip1.SetToolTip(Me.chkVotekick, "Starts a round of voting to kick out to the player written below.")
@@ -1344,10 +1365,10 @@ Partial Class frmConsola
         Me.chkMaplist.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkMaplist.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkMaplist.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.chkMaplist.Location = New System.Drawing.Point(8, 62)
-        Me.chkMaplist.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkMaplist.Location = New System.Drawing.Point(6, 50)
+        Me.chkMaplist.Margin = New System.Windows.Forms.Padding(2)
         Me.chkMaplist.Name = "chkMaplist"
-        Me.chkMaplist.Size = New System.Drawing.Size(68, 19)
+        Me.chkMaplist.Size = New System.Drawing.Size(58, 16)
         Me.chkMaplist.TabIndex = 65
         Me.chkMaplist.Text = "!maplist"
         Me.ToolTip1.SetToolTip(Me.chkMaplist, "Shows the players list in game. (Active for all players)")
@@ -1360,10 +1381,10 @@ Partial Class frmConsola
         Me.chkVotemapnext.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkVotemapnext.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkVotemapnext.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.chkVotemapnext.Location = New System.Drawing.Point(8, 41)
-        Me.chkVotemapnext.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkVotemapnext.Location = New System.Drawing.Point(6, 33)
+        Me.chkVotemapnext.Margin = New System.Windows.Forms.Padding(2)
         Me.chkVotemapnext.Name = "chkVotemapnext"
-        Me.chkVotemapnext.Size = New System.Drawing.Size(98, 19)
+        Me.chkVotemapnext.Size = New System.Drawing.Size(85, 16)
         Me.chkVotemapnext.TabIndex = 64
         Me.chkVotemapnext.Text = "!votemapnext"
         Me.ToolTip1.SetToolTip(Me.chkVotemapnext, "Starts a round of voting to change to the next map. (Shows the next map)")
@@ -1376,10 +1397,10 @@ Partial Class frmConsola
         Me.chkPlayerlist.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPlayerlist.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkPlayerlist.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.chkPlayerlist.Location = New System.Drawing.Point(8, 21)
-        Me.chkPlayerlist.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkPlayerlist.Location = New System.Drawing.Point(6, 17)
+        Me.chkPlayerlist.Margin = New System.Windows.Forms.Padding(2)
         Me.chkPlayerlist.Name = "chkPlayerlist"
-        Me.chkPlayerlist.Size = New System.Drawing.Size(76, 19)
+        Me.chkPlayerlist.Size = New System.Drawing.Size(64, 16)
         Me.chkPlayerlist.TabIndex = 63
         Me.chkPlayerlist.Text = "!playerlist"
         Me.ToolTip1.SetToolTip(Me.chkPlayerlist, "Shows the players list in game. (Active for all players)")
@@ -1392,10 +1413,10 @@ Partial Class frmConsola
         Me.chkCommandlist.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkCommandlist.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkCommandlist.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(18, Byte), Integer), CType(CType(18, Byte), Integer))
-        Me.chkCommandlist.Location = New System.Drawing.Point(8, 1)
-        Me.chkCommandlist.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkCommandlist.Location = New System.Drawing.Point(6, 1)
+        Me.chkCommandlist.Margin = New System.Windows.Forms.Padding(2)
         Me.chkCommandlist.Name = "chkCommandlist"
-        Me.chkCommandlist.Size = New System.Drawing.Size(99, 19)
+        Me.chkCommandlist.Size = New System.Drawing.Size(84, 16)
         Me.chkCommandlist.TabIndex = 55
         Me.chkCommandlist.Text = "!commandlist"
         Me.ToolTip1.SetToolTip(Me.chkCommandlist, "Show the General Commands list into the game. (Active for general players)")
@@ -1409,10 +1430,10 @@ Partial Class frmConsola
         Me.chkCommandlistAd.Enabled = False
         Me.chkCommandlistAd.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkCommandlistAd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkCommandlistAd.Location = New System.Drawing.Point(5, 1)
-        Me.chkCommandlistAd.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkCommandlistAd.Location = New System.Drawing.Point(4, 1)
+        Me.chkCommandlistAd.Margin = New System.Windows.Forms.Padding(2)
         Me.chkCommandlistAd.Name = "chkCommandlistAd"
-        Me.chkCommandlistAd.Size = New System.Drawing.Size(99, 19)
+        Me.chkCommandlistAd.Size = New System.Drawing.Size(84, 16)
         Me.chkCommandlistAd.TabIndex = 66
         Me.chkCommandlistAd.Text = "!commandlist"
         Me.ToolTip1.SetToolTip(Me.chkCommandlistAd, "Show the Admins Command list into  the game.")
@@ -1425,10 +1446,10 @@ Partial Class frmConsola
         Me.chkRestart.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkRestart.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRestart.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkRestart.Location = New System.Drawing.Point(149, 21)
-        Me.chkRestart.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkRestart.Location = New System.Drawing.Point(112, 17)
+        Me.chkRestart.Margin = New System.Windows.Forms.Padding(2)
         Me.chkRestart.Name = "chkRestart"
-        Me.chkRestart.Size = New System.Drawing.Size(62, 19)
+        Me.chkRestart.Size = New System.Drawing.Size(53, 16)
         Me.chkRestart.TabIndex = 65
         Me.chkRestart.Text = "!restart"
         Me.ToolTip1.SetToolTip(Me.chkRestart, "Restart the Dedicated Server.")
@@ -1441,10 +1462,10 @@ Partial Class frmConsola
         Me.chkServershutdown.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkServershutdown.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkServershutdown.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkServershutdown.Location = New System.Drawing.Point(149, 1)
-        Me.chkServershutdown.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkServershutdown.Location = New System.Drawing.Point(112, 1)
+        Me.chkServershutdown.Margin = New System.Windows.Forms.Padding(2)
         Me.chkServershutdown.Name = "chkServershutdown"
-        Me.chkServershutdown.Size = New System.Drawing.Size(113, 19)
+        Me.chkServershutdown.Size = New System.Drawing.Size(96, 16)
         Me.chkServershutdown.TabIndex = 64
         Me.chkServershutdown.Text = "!servershutdown"
         Me.ToolTip1.SetToolTip(Me.chkServershutdown, "Shut down the Dedicated Server.")
@@ -1457,10 +1478,10 @@ Partial Class frmConsola
         Me.chkAdminsay.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkAdminsay.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkAdminsay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkAdminsay.Location = New System.Drawing.Point(149, 62)
-        Me.chkAdminsay.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkAdminsay.Location = New System.Drawing.Point(112, 50)
+        Me.chkAdminsay.Margin = New System.Windows.Forms.Padding(2)
         Me.chkAdminsay.Name = "chkAdminsay"
-        Me.chkAdminsay.Size = New System.Drawing.Size(80, 19)
+        Me.chkAdminsay.Size = New System.Drawing.Size(69, 16)
         Me.chkAdminsay.TabIndex = 63
         Me.chkAdminsay.Text = "!adminsay"
         Me.ToolTip1.SetToolTip(Me.chkAdminsay, "Send an Admin warning.")
@@ -1473,10 +1494,10 @@ Partial Class frmConsola
         Me.chkPlayerlistAd.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPlayerlistAd.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkPlayerlistAd.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkPlayerlistAd.Location = New System.Drawing.Point(5, 142)
-        Me.chkPlayerlistAd.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkPlayerlistAd.Location = New System.Drawing.Point(4, 115)
+        Me.chkPlayerlistAd.Margin = New System.Windows.Forms.Padding(2)
         Me.chkPlayerlistAd.Name = "chkPlayerlistAd"
-        Me.chkPlayerlistAd.Size = New System.Drawing.Size(76, 19)
+        Me.chkPlayerlistAd.Size = New System.Drawing.Size(64, 16)
         Me.chkPlayerlistAd.TabIndex = 62
         Me.chkPlayerlistAd.Text = "!playerlist"
         Me.ToolTip1.SetToolTip(Me.chkPlayerlistAd, "Shows the players list in game. (Active for Admins)")
@@ -1489,10 +1510,10 @@ Partial Class frmConsola
         Me.chkBanlist.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkBanlist.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkBanlist.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkBanlist.Location = New System.Drawing.Point(5, 121)
-        Me.chkBanlist.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkBanlist.Location = New System.Drawing.Point(4, 98)
+        Me.chkBanlist.Margin = New System.Windows.Forms.Padding(2)
         Me.chkBanlist.Name = "chkBanlist"
-        Me.chkBanlist.Size = New System.Drawing.Size(64, 19)
+        Me.chkBanlist.Size = New System.Drawing.Size(55, 16)
         Me.chkBanlist.TabIndex = 61
         Me.chkBanlist.Text = "!banlist"
         Me.ToolTip1.SetToolTip(Me.chkBanlist, "Show into the game the banned players list.")
@@ -1505,10 +1526,10 @@ Partial Class frmConsola
         Me.chkUnban.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkUnban.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkUnban.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkUnban.Location = New System.Drawing.Point(5, 101)
-        Me.chkUnban.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkUnban.Location = New System.Drawing.Point(4, 82)
+        Me.chkUnban.Margin = New System.Windows.Forms.Padding(2)
         Me.chkUnban.Name = "chkUnban"
-        Me.chkUnban.Size = New System.Drawing.Size(127, 19)
+        Me.chkUnban.Size = New System.Drawing.Size(110, 16)
         Me.chkUnban.TabIndex = 60
         Me.chkUnban.Text = "!unban <name/id>"
         Me.ToolTip1.SetToolTip(Me.chkUnban, "Unban the player who you write by NAME into the command line.")
@@ -1521,10 +1542,10 @@ Partial Class frmConsola
         Me.chkBan.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkBan.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkBan.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkBan.Location = New System.Drawing.Point(5, 81)
-        Me.chkBan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkBan.Location = New System.Drawing.Point(4, 66)
+        Me.chkBan.Margin = New System.Windows.Forms.Padding(2)
         Me.chkBan.Name = "chkBan"
-        Me.chkBan.Size = New System.Drawing.Size(98, 19)
+        Me.chkBan.Size = New System.Drawing.Size(86, 16)
         Me.chkBan.TabIndex = 59
         Me.chkBan.Text = "!ban <name>"
         Me.ToolTip1.SetToolTip(Me.chkBan, "Ban the player who you write by NAME into the command line.")
@@ -1537,10 +1558,10 @@ Partial Class frmConsola
         Me.chkKick.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkKick.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkKick.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkKick.Location = New System.Drawing.Point(5, 62)
-        Me.chkKick.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkKick.Location = New System.Drawing.Point(4, 50)
+        Me.chkKick.Margin = New System.Windows.Forms.Padding(2)
         Me.chkKick.Name = "chkKick"
-        Me.chkKick.Size = New System.Drawing.Size(114, 19)
+        Me.chkKick.Size = New System.Drawing.Size(98, 16)
         Me.chkKick.TabIndex = 58
         Me.chkKick.Text = "!kick <name/id>"
         Me.ToolTip1.SetToolTip(Me.chkKick, "Kick out the player who you write by name into the command line.")
@@ -1553,10 +1574,10 @@ Partial Class frmConsola
         Me.chkKill.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkKill.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkKill.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkKill.Location = New System.Drawing.Point(5, 41)
-        Me.chkKill.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkKill.Location = New System.Drawing.Point(4, 33)
+        Me.chkKill.Margin = New System.Windows.Forms.Padding(2)
         Me.chkKill.Name = "chkKill"
-        Me.chkKill.Size = New System.Drawing.Size(108, 19)
+        Me.chkKill.Size = New System.Drawing.Size(92, 16)
         Me.chkKill.TabIndex = 57
         Me.chkKill.Text = "!kill <name/id>"
         Me.ToolTip1.SetToolTip(Me.chkKill, "Kill the player who you write by name or id into the command line.")
@@ -1569,10 +1590,10 @@ Partial Class frmConsola
         Me.chkNewadmin.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkNewadmin.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkNewadmin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkNewadmin.Location = New System.Drawing.Point(5, 21)
-        Me.chkNewadmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkNewadmin.Location = New System.Drawing.Point(4, 17)
+        Me.chkNewadmin.Margin = New System.Windows.Forms.Padding(2)
         Me.chkNewadmin.Name = "chkNewadmin"
-        Me.chkNewadmin.Size = New System.Drawing.Size(134, 19)
+        Me.chkNewadmin.Size = New System.Drawing.Size(115, 16)
         Me.chkNewadmin.TabIndex = 56
         Me.chkNewadmin.Text = "!newadmin <name>"
         Me.ToolTip1.SetToolTip(Me.chkNewadmin, "Grant administrator privileges to a normal player.")
@@ -1585,10 +1606,10 @@ Partial Class frmConsola
         Me.chkMapnext.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkMapnext.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkMapnext.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkMapnext.Location = New System.Drawing.Point(149, 41)
-        Me.chkMapnext.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkMapnext.Location = New System.Drawing.Point(112, 33)
+        Me.chkMapnext.Margin = New System.Windows.Forms.Padding(2)
         Me.chkMapnext.Name = "chkMapnext"
-        Me.chkMapnext.Size = New System.Drawing.Size(75, 19)
+        Me.chkMapnext.Size = New System.Drawing.Size(66, 16)
         Me.chkMapnext.TabIndex = 54
         Me.chkMapnext.Text = "!mapnext"
         Me.ToolTip1.SetToolTip(Me.chkMapnext, "Go to the next map in game.")
@@ -1599,9 +1620,10 @@ Partial Class frmConsola
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(58, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(175, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(24, 390)
+        Me.Label10.Location = New System.Drawing.Point(18, 317)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(104, 15)
+        Me.Label10.Size = New System.Drawing.Size(85, 12)
         Me.Label10.TabIndex = 52
         Me.Label10.Text = "Admin Commands"
         Me.ToolTip1.SetToolTip(Me.Label10, "Commands for admins")
@@ -1609,23 +1631,22 @@ Partial Class frmConsola
         'lbPlayers2
         '
         Me.lbPlayers2.FormattingEnabled = True
-        Me.lbPlayers2.ItemHeight = 16
-        Me.lbPlayers2.Location = New System.Drawing.Point(3, 38)
-        Me.lbPlayers2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbPlayers2.Location = New System.Drawing.Point(2, 31)
+        Me.lbPlayers2.Margin = New System.Windows.Forms.Padding(2)
         Me.lbPlayers2.Name = "lbPlayers2"
         Me.lbPlayers2.ScrollAlwaysVisible = True
         Me.lbPlayers2.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbPlayers2.Size = New System.Drawing.Size(265, 340)
+        Me.lbPlayers2.Size = New System.Drawing.Size(200, 277)
         Me.lbPlayers2.TabIndex = 43
         Me.ToolTip1.SetToolTip(Me.lbPlayers2, "List of people playing online on this server.")
         '
         'btnAddAdmin
         '
         Me.btnAddAdmin.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddAdmin.Location = New System.Drawing.Point(275, 121)
-        Me.btnAddAdmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddAdmin.Location = New System.Drawing.Point(206, 98)
+        Me.btnAddAdmin.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAddAdmin.Name = "btnAddAdmin"
-        Me.btnAddAdmin.Size = New System.Drawing.Size(35, 39)
+        Me.btnAddAdmin.Size = New System.Drawing.Size(26, 32)
         Me.btnAddAdmin.TabIndex = 50
         Me.btnAddAdmin.Text = ">>"
         Me.ToolTip1.SetToolTip(Me.btnAddAdmin, "Adds all selected gamers from the left list to Admins List.")
@@ -1637,9 +1658,10 @@ Partial Class frmConsola
         Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label7.Location = New System.Drawing.Point(43, 6)
+        Me.Label7.Location = New System.Drawing.Point(32, 5)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(226, 32)
+        Me.Label7.Size = New System.Drawing.Size(170, 26)
         Me.Label7.TabIndex = 41
         Me.Label7.Text = "Players in Game"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1648,10 +1670,10 @@ Partial Class frmConsola
         'btnDeleAdmin
         '
         Me.btnDeleAdmin.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleAdmin.Location = New System.Drawing.Point(389, 346)
-        Me.btnDeleAdmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnDeleAdmin.Location = New System.Drawing.Point(292, 281)
+        Me.btnDeleAdmin.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDeleAdmin.Name = "btnDeleAdmin"
-        Me.btnDeleAdmin.Size = New System.Drawing.Size(91, 28)
+        Me.btnDeleAdmin.Size = New System.Drawing.Size(68, 23)
         Me.btnDeleAdmin.TabIndex = 49
         Me.btnDeleAdmin.Text = "Delete Admin"
         Me.ToolTip1.SetToolTip(Me.btnDeleAdmin, "Removes the selected players from the list above.")
@@ -1663,9 +1685,10 @@ Partial Class frmConsola
         Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label8.Location = New System.Drawing.Point(3, 6)
+        Me.Label8.Location = New System.Drawing.Point(2, 5)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(37, 32)
+        Me.Label8.Size = New System.Drawing.Size(28, 26)
         Me.Label8.TabIndex = 42
         Me.Label8.Text = "Id."
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -1674,15 +1697,14 @@ Partial Class frmConsola
         'lbAdmin
         '
         Me.lbAdmin.FormattingEnabled = True
-        Me.lbAdmin.ItemHeight = 16
-        Me.lbAdmin.Location = New System.Drawing.Point(316, 38)
-        Me.lbAdmin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbAdmin.Location = New System.Drawing.Point(237, 31)
+        Me.lbAdmin.Margin = New System.Windows.Forms.Padding(2)
         Me.lbAdmin.Name = "lbAdmin"
         Me.lbAdmin.ScrollAlwaysVisible = True
         Me.lbAdmin.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbAdmin.Size = New System.Drawing.Size(167, 260)
+        Me.lbAdmin.Size = New System.Drawing.Size(126, 212)
         Me.lbAdmin.TabIndex = 48
-        Me.ToolTip1.SetToolTip(Me.lbAdmin, "List admin of this server. All players on this list will have access to use admin" & _
+        Me.ToolTip1.SetToolTip(Me.lbAdmin, "List admin of this server. All players on this list will have access to use admin" &
         " commands.")
         '
         'Label9
@@ -1691,13 +1713,14 @@ Partial Class frmConsola
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label9.Location = New System.Drawing.Point(316, 7)
+        Me.Label9.Location = New System.Drawing.Point(237, 6)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(167, 32)
+        Me.Label9.Size = New System.Drawing.Size(126, 26)
         Me.Label9.TabIndex = 44
         Me.Label9.Text = "Admins List"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolTip1.SetToolTip(Me.Label9, "List admin of this server. All players on this list will have access to use admin" & _
+        Me.ToolTip1.SetToolTip(Me.Label9, "List admin of this server. All players on this list will have access to use admin" &
         " commands.")
         '
         'TabLogs
@@ -1713,11 +1736,11 @@ Partial Class frmConsola
         Me.TabLogs.Controls.Add(Me.Label12)
         Me.TabLogs.Controls.Add(Me.lbLogFilesList)
         Me.TabLogs.Controls.Add(Me.Label13)
-        Me.TabLogs.Location = New System.Drawing.Point(4, 25)
-        Me.TabLogs.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabLogs.Location = New System.Drawing.Point(4, 22)
+        Me.TabLogs.Margin = New System.Windows.Forms.Padding(2)
         Me.TabLogs.Name = "TabLogs"
-        Me.TabLogs.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabLogs.Size = New System.Drawing.Size(487, 578)
+        Me.TabLogs.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabLogs.Size = New System.Drawing.Size(450, 467)
         Me.TabLogs.TabIndex = 3
         Me.TabLogs.Text = "Logs"
         '
@@ -1726,13 +1749,14 @@ Partial Class frmConsola
         Me.lblQuantityLogs.BackColor = System.Drawing.Color.FromArgb(CType(CType(170, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(150, Byte), Integer))
         Me.lblQuantityLogs.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblQuantityLogs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.lblQuantityLogs.Location = New System.Drawing.Point(248, 380)
+        Me.lblQuantityLogs.Location = New System.Drawing.Point(186, 309)
+        Me.lblQuantityLogs.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblQuantityLogs.Name = "lblQuantityLogs"
-        Me.lblQuantityLogs.Size = New System.Drawing.Size(61, 26)
+        Me.lblQuantityLogs.Size = New System.Drawing.Size(46, 21)
         Me.lblQuantityLogs.TabIndex = 58
         Me.lblQuantityLogs.Text = "1/50"
         Me.lblQuantityLogs.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ToolTip1.SetToolTip(Me.lblQuantityLogs, "Coj2 Controller automatically keeps the last 50 game log files and delete the res" & _
+        Me.ToolTip1.SetToolTip(Me.lblQuantityLogs, "Coj2 Controller automatically keeps the last 50 game log files and delete the res" &
         "t of older files.")
         '
         'btnBuscaEnOldChat
@@ -1740,10 +1764,10 @@ Partial Class frmConsola
         Me.btnBuscaEnOldChat.AutoSize = True
         Me.btnBuscaEnOldChat.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(160, Byte), Integer))
         Me.btnBuscaEnOldChat.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscaEnOldChat.Location = New System.Drawing.Point(267, 4)
-        Me.btnBuscaEnOldChat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnBuscaEnOldChat.Location = New System.Drawing.Point(200, 3)
+        Me.btnBuscaEnOldChat.Margin = New System.Windows.Forms.Padding(2)
         Me.btnBuscaEnOldChat.Name = "btnBuscaEnOldChat"
-        Me.btnBuscaEnOldChat.Size = New System.Drawing.Size(49, 31)
+        Me.btnBuscaEnOldChat.Size = New System.Drawing.Size(37, 25)
         Me.btnBuscaEnOldChat.TabIndex = 57
         Me.btnBuscaEnOldChat.Text = "(F3)"
         Me.ToolTip1.SetToolTip(Me.btnBuscaEnOldChat, "Find the words on the right textbox")
@@ -1755,9 +1779,10 @@ Partial Class frmConsola
         Me.lblFindInChat.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.lblFindInChat.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFindInChat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(160, Byte), Integer), CType(CType(140, Byte), Integer), CType(CType(120, Byte), Integer))
-        Me.lblFindInChat.Location = New System.Drawing.Point(326, 12)
+        Me.lblFindInChat.Location = New System.Drawing.Point(244, 10)
+        Me.lblFindInChat.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFindInChat.Name = "lblFindInChat"
-        Me.lblFindInChat.Size = New System.Drawing.Size(69, 15)
+        Me.lblFindInChat.Size = New System.Drawing.Size(57, 12)
         Me.lblFindInChat.TabIndex = 56
         Me.lblFindInChat.Text = "Find in chat"
         Me.ToolTip1.SetToolTip(Me.lblFindInChat, "Introduce words to find")
@@ -1767,10 +1792,10 @@ Partial Class frmConsola
         Me.txtFindInChat.BackColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.txtFindInChat.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFindInChat.ForeColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.txtFindInChat.Location = New System.Drawing.Point(320, 7)
-        Me.txtFindInChat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtFindInChat.Location = New System.Drawing.Point(240, 6)
+        Me.txtFindInChat.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFindInChat.Name = "txtFindInChat"
-        Me.txtFindInChat.Size = New System.Drawing.Size(161, 25)
+        Me.txtFindInChat.Size = New System.Drawing.Size(122, 22)
         Me.txtFindInChat.TabIndex = 55
         Me.ToolTip1.SetToolTip(Me.txtFindInChat, "Introduce words to find")
         '
@@ -1778,10 +1803,10 @@ Partial Class frmConsola
         '
         Me.btnLoadLog.AutoSize = True
         Me.btnLoadLog.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLoadLog.Location = New System.Drawing.Point(331, 500)
-        Me.btnLoadLog.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnLoadLog.Location = New System.Drawing.Point(248, 406)
+        Me.btnLoadLog.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoadLog.Name = "btnLoadLog"
-        Me.btnLoadLog.Size = New System.Drawing.Size(144, 31)
+        Me.btnLoadLog.Size = New System.Drawing.Size(108, 25)
         Me.btnLoadLog.TabIndex = 54
         Me.btnLoadLog.Text = "Load selected file"
         Me.btnLoadLog.UseVisualStyleBackColor = True
@@ -1790,10 +1815,10 @@ Partial Class frmConsola
         '
         Me.btnDeleteLog.AutoSize = True
         Me.btnDeleteLog.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteLog.Location = New System.Drawing.Point(331, 543)
-        Me.btnDeleteLog.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnDeleteLog.Location = New System.Drawing.Point(248, 441)
+        Me.btnDeleteLog.Margin = New System.Windows.Forms.Padding(2)
         Me.btnDeleteLog.Name = "btnDeleteLog"
-        Me.btnDeleteLog.Size = New System.Drawing.Size(144, 31)
+        Me.btnDeleteLog.Size = New System.Drawing.Size(108, 25)
         Me.btnDeleteLog.TabIndex = 53
         Me.btnDeleteLog.Text = "Delete selected files"
         Me.btnDeleteLog.UseVisualStyleBackColor = True
@@ -1805,11 +1830,11 @@ Partial Class frmConsola
         Me.lbOldChats.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbOldChats.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.lbOldChats.FormattingEnabled = True
-        Me.lbOldChats.Location = New System.Drawing.Point(0, 39)
-        Me.lbOldChats.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbOldChats.Location = New System.Drawing.Point(0, 32)
+        Me.lbOldChats.Margin = New System.Windows.Forms.Padding(2)
         Me.lbOldChats.Name = "lbOldChats"
         Me.lbOldChats.ScrollAlwaysVisible = True
-        Me.lbOldChats.Size = New System.Drawing.Size(487, 316)
+        Me.lbOldChats.Size = New System.Drawing.Size(366, 251)
         Me.lbOldChats.TabIndex = 50
         '
         'Label12
@@ -1819,8 +1844,9 @@ Partial Class frmConsola
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.Control
         Me.Label12.Location = New System.Drawing.Point(0, 1)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(487, 38)
+        Me.Label12.Size = New System.Drawing.Size(366, 31)
         Me.Label12.TabIndex = 49
         Me.Label12.Text = "Chat"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1830,14 +1856,15 @@ Partial Class frmConsola
         '
         Me.lbLogFilesList.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbLogFilesList.FormattingEnabled = True
-        Me.lbLogFilesList.Location = New System.Drawing.Point(0, 412)
-        Me.lbLogFilesList.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbLogFilesList.ItemHeight = 12
+        Me.lbLogFilesList.Location = New System.Drawing.Point(0, 335)
+        Me.lbLogFilesList.Margin = New System.Windows.Forms.Padding(2)
         Me.lbLogFilesList.Name = "lbLogFilesList"
         Me.lbLogFilesList.ScrollAlwaysVisible = True
         Me.lbLogFilesList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbLogFilesList.Size = New System.Drawing.Size(317, 160)
+        Me.lbLogFilesList.Size = New System.Drawing.Size(239, 124)
         Me.lbLogFilesList.TabIndex = 52
-        Me.ToolTip1.SetToolTip(Me.lbLogFilesList, "Coj2 Controller automatically keeps the last 50 game log files and delete the res" & _
+        Me.ToolTip1.SetToolTip(Me.lbLogFilesList, "Coj2 Controller automatically keeps the last 50 game log files and delete the res" &
         "t of older files.")
         '
         'Label13
@@ -1846,13 +1873,14 @@ Partial Class frmConsola
         Me.Label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.Label13.Location = New System.Drawing.Point(0, 374)
+        Me.Label13.Location = New System.Drawing.Point(0, 304)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(317, 39)
+        Me.Label13.Size = New System.Drawing.Size(238, 32)
         Me.Label13.TabIndex = 51
         Me.Label13.Text = "Log Files List"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolTip1.SetToolTip(Me.Label13, "Coj2 Controller automatically keeps the last 50 game log files and delete the res" & _
+        Me.ToolTip1.SetToolTip(Me.Label13, "Coj2 Controller automatically keeps the last 50 game log files and delete the res" &
         "t of older files.")
         '
         'TabMaps
@@ -1861,11 +1889,11 @@ Partial Class frmConsola
         Me.TabMaps.Controls.Add(Me.Label19)
         Me.TabMaps.Controls.Add(Me.chkRememberMaps)
         Me.TabMaps.Controls.Add(Me.dgMaps)
-        Me.TabMaps.Location = New System.Drawing.Point(4, 25)
-        Me.TabMaps.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabMaps.Location = New System.Drawing.Point(4, 22)
+        Me.TabMaps.Margin = New System.Windows.Forms.Padding(2)
         Me.TabMaps.Name = "TabMaps"
-        Me.TabMaps.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TabMaps.Size = New System.Drawing.Size(487, 578)
+        Me.TabMaps.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabMaps.Size = New System.Drawing.Size(450, 467)
         Me.TabMaps.TabIndex = 4
         Me.TabMaps.Text = "Maps"
         '
@@ -1873,12 +1901,13 @@ Partial Class frmConsola
         '
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(90, Byte), Integer))
-        Me.Label19.Location = New System.Drawing.Point(3, 492)
+        Me.Label19.Location = New System.Drawing.Point(2, 400)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(475, 48)
+        Me.Label19.Size = New System.Drawing.Size(356, 39)
         Me.Label19.TabIndex = 58
-        Me.Label19.Text = "* Coj2 not allow modifying the map list when the server is working. You can modif" & _
-    "y it when the server is stopped, by selecting the option ""Server Config"" from th" & _
+        Me.Label19.Text = "* Coj2 not allow modifying the map list when the server is working. You can modif" &
+    "y it when the server is stopped, by selecting the option ""Server Config"" from th" &
     "e main menu."
         '
         'chkRememberMaps
@@ -1888,13 +1917,13 @@ Partial Class frmConsola
         Me.chkRememberMaps.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkRememberMaps.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRememberMaps.ForeColor = System.Drawing.Color.FromArgb(CType(CType(18, Byte), Integer), CType(CType(58, Byte), Integer), CType(CType(105, Byte), Integer))
-        Me.chkRememberMaps.Location = New System.Drawing.Point(8, 552)
-        Me.chkRememberMaps.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.chkRememberMaps.Location = New System.Drawing.Point(6, 448)
+        Me.chkRememberMaps.Margin = New System.Windows.Forms.Padding(2)
         Me.chkRememberMaps.Name = "chkRememberMaps"
-        Me.chkRememberMaps.Size = New System.Drawing.Size(317, 19)
+        Me.chkRememberMaps.Size = New System.Drawing.Size(267, 16)
         Me.chkRememberMaps.TabIndex = 57
         Me.chkRememberMaps.Text = "Remember last map played when server start next time "
-        Me.ToolTip1.SetToolTip(Me.chkRememberMaps, "If enabled, the map list will change to start in the next server reset by the cor" & _
+        Me.ToolTip1.SetToolTip(Me.chkRememberMaps, "If enabled, the map list will change to start in the next server reset by the cor" &
         "responding map below.")
         Me.chkRememberMaps.UseVisualStyleBackColor = True
         '
@@ -1932,9 +1961,9 @@ Partial Class frmConsola
         Me.dgMaps.EnableHeadersVisualStyles = False
         Me.dgMaps.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dgMaps.Location = New System.Drawing.Point(0, 0)
-        Me.dgMaps.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dgMaps.MaximumSize = New System.Drawing.Size(615, 786)
-        Me.dgMaps.MinimumSize = New System.Drawing.Size(315, 286)
+        Me.dgMaps.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgMaps.MaximumSize = New System.Drawing.Size(461, 639)
+        Me.dgMaps.MinimumSize = New System.Drawing.Size(236, 232)
         Me.dgMaps.MultiSelect = False
         Me.dgMaps.Name = "dgMaps"
         Me.dgMaps.ReadOnly = True
@@ -1944,11 +1973,11 @@ Partial Class frmConsola
         Me.dgMaps.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgMaps.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgMaps.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgMaps.Size = New System.Drawing.Size(487, 490)
+        Me.dgMaps.Size = New System.Drawing.Size(365, 398)
         Me.dgMaps.StandardTab = True
         Me.dgMaps.TabIndex = 47
         Me.dgMaps.TabStop = False
-        Me.ToolTip1.SetToolTip(Me.dgMaps, "Maps are going to be play by the order from this list. Can not be modified from h" & _
+        Me.ToolTip1.SetToolTip(Me.dgMaps, "Maps are going to be play by the order from this list. Can not be modified from h" &
         "ere.")
         '
         'colMaps
@@ -1962,7 +1991,7 @@ Partial Class frmConsola
         Me.colMaps.Name = "colMaps"
         Me.colMaps.ReadOnly = True
         Me.colMaps.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.colMaps.ToolTipText = "Maps are going to be play by the order from this list. Can not be modified from h" & _
+        Me.colMaps.ToolTipText = "Maps are going to be play by the order from this list. Can not be modified from h" &
     "ere."
         Me.colMaps.Width = 210
         '
@@ -1977,17 +2006,18 @@ Partial Class frmConsola
         Me.ColMode.Name = "ColMode"
         Me.ColMode.ReadOnly = True
         Me.ColMode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.ColMode.ToolTipText = "Maps are going to be play by the order from this list. Can not be modified from h" & _
+        Me.ColMode.ToolTipText = "Maps are going to be play by the order from this list. Can not be modified from h" &
     "ere."
         Me.ColMode.Width = 275
         '
         'TabRules
         '
         Me.TabRules.Controls.Add(Me.Panel3)
-        Me.TabRules.Location = New System.Drawing.Point(4, 25)
+        Me.TabRules.Location = New System.Drawing.Point(4, 22)
+        Me.TabRules.Margin = New System.Windows.Forms.Padding(2)
         Me.TabRules.Name = "TabRules"
-        Me.TabRules.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabRules.Size = New System.Drawing.Size(487, 578)
+        Me.TabRules.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabRules.Size = New System.Drawing.Size(450, 467)
         Me.TabRules.TabIndex = 6
         Me.TabRules.Text = "Rules"
         Me.TabRules.UseVisualStyleBackColor = True
@@ -2005,9 +2035,10 @@ Partial Class frmConsola
         Me.Panel3.Controls.Add(Me.Label21)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Font = New System.Drawing.Font("Segoe UI", 8.139131!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(3, 3)
+        Me.Panel3.Location = New System.Drawing.Point(2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(481, 572)
+        Me.Panel3.Size = New System.Drawing.Size(446, 463)
         Me.Panel3.TabIndex = 0
         '
         'chkCleanPlayersWarned
@@ -2016,9 +2047,10 @@ Partial Class frmConsola
         Me.chkCleanPlayersWarned.Checked = True
         Me.chkCleanPlayersWarned.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkCleanPlayersWarned.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Italic)
-        Me.chkCleanPlayersWarned.Location = New System.Drawing.Point(248, 314)
+        Me.chkCleanPlayersWarned.Location = New System.Drawing.Point(186, 255)
+        Me.chkCleanPlayersWarned.Margin = New System.Windows.Forms.Padding(2)
         Me.chkCleanPlayersWarned.Name = "chkCleanPlayersWarned"
-        Me.chkCleanPlayersWarned.Size = New System.Drawing.Size(217, 17)
+        Me.chkCleanPlayersWarned.Size = New System.Drawing.Size(177, 16)
         Me.chkCleanPlayersWarned.TabIndex = 67
         Me.chkCleanPlayersWarned.Text = "Clean List Player Warned each new map."
         Me.chkCleanPlayersWarned.UseVisualStyleBackColor = True
@@ -2039,9 +2071,11 @@ Partial Class frmConsola
         Me.GroupBox1.Controls.Add(Me.rbWordsKill)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.GroupBox1.Location = New System.Drawing.Point(239, 347)
+        Me.GroupBox1.Location = New System.Drawing.Point(179, 282)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(239, 224)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(179, 182)
         Me.GroupBox1.TabIndex = 66
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Actions"
@@ -2050,9 +2084,10 @@ Partial Class frmConsola
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(98, 127)
+        Me.Label25.Location = New System.Drawing.Point(74, 103)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(132, 13)
+        Me.Label25.Size = New System.Drawing.Size(105, 12)
         Me.Label25.TabIndex = 11
         Me.Label25.Text = "Message (max. 60 chars.)"
         '
@@ -2060,20 +2095,22 @@ Partial Class frmConsola
         '
         Me.txtWarningWords.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWarningWords.ForeColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtWarningWords.Location = New System.Drawing.Point(6, 143)
+        Me.txtWarningWords.Location = New System.Drawing.Point(4, 116)
+        Me.txtWarningWords.Margin = New System.Windows.Forms.Padding(2)
         Me.txtWarningWords.MaxLength = 60
         Me.txtWarningWords.Multiline = True
         Me.txtWarningWords.Name = "txtWarningWords"
-        Me.txtWarningWords.Size = New System.Drawing.Size(227, 73)
+        Me.txtWarningWords.Size = New System.Drawing.Size(171, 60)
         Me.txtWarningWords.TabIndex = 10
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(155, 100)
+        Me.Label24.Location = New System.Drawing.Point(116, 81)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(37, 13)
+        Me.Label24.Size = New System.Drawing.Size(29, 12)
         Me.Label24.TabIndex = 9
         Me.Label24.Text = "times."
         '
@@ -2083,10 +2120,11 @@ Partial Class frmConsola
         Me.cboxWordBanEachTimes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cboxWordBanEachTimes.FormattingEnabled = True
         Me.cboxWordBanEachTimes.Items.AddRange(New Object() {" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8"})
-        Me.cboxWordBanEachTimes.Location = New System.Drawing.Point(110, 96)
+        Me.cboxWordBanEachTimes.Location = New System.Drawing.Point(82, 78)
+        Me.cboxWordBanEachTimes.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxWordBanEachTimes.MaxLength = 2
         Me.cboxWordBanEachTimes.Name = "cboxWordBanEachTimes"
-        Me.cboxWordBanEachTimes.Size = New System.Drawing.Size(42, 21)
+        Me.cboxWordBanEachTimes.Size = New System.Drawing.Size(32, 20)
         Me.cboxWordBanEachTimes.TabIndex = 8
         Me.cboxWordBanEachTimes.Text = "5"
         '
@@ -2094,9 +2132,10 @@ Partial Class frmConsola
         '
         Me.rbWordsBan.AutoSize = True
         Me.rbWordsBan.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbWordsBan.Location = New System.Drawing.Point(10, 97)
+        Me.rbWordsBan.Location = New System.Drawing.Point(8, 79)
+        Me.rbWordsBan.Margin = New System.Windows.Forms.Padding(2)
         Me.rbWordsBan.Name = "rbWordsBan"
-        Me.rbWordsBan.Size = New System.Drawing.Size(96, 17)
+        Me.rbWordsBan.Size = New System.Drawing.Size(79, 16)
         Me.rbWordsBan.TabIndex = 7
         Me.rbWordsBan.Text = "BAN him each"
         Me.rbWordsBan.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -2106,9 +2145,10 @@ Partial Class frmConsola
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(155, 76)
+        Me.Label23.Location = New System.Drawing.Point(116, 62)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(37, 13)
+        Me.Label23.Size = New System.Drawing.Size(29, 12)
         Me.Label23.TabIndex = 6
         Me.Label23.Text = "times."
         '
@@ -2118,10 +2158,11 @@ Partial Class frmConsola
         Me.cboxWordKickEachTimes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cboxWordKickEachTimes.FormattingEnabled = True
         Me.cboxWordKickEachTimes.Items.AddRange(New Object() {" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8"})
-        Me.cboxWordKickEachTimes.Location = New System.Drawing.Point(110, 72)
+        Me.cboxWordKickEachTimes.Location = New System.Drawing.Point(82, 58)
+        Me.cboxWordKickEachTimes.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxWordKickEachTimes.MaxLength = 2
         Me.cboxWordKickEachTimes.Name = "cboxWordKickEachTimes"
-        Me.cboxWordKickEachTimes.Size = New System.Drawing.Size(42, 21)
+        Me.cboxWordKickEachTimes.Size = New System.Drawing.Size(32, 20)
         Me.cboxWordKickEachTimes.TabIndex = 5
         Me.cboxWordKickEachTimes.Text = "3"
         '
@@ -2129,9 +2170,10 @@ Partial Class frmConsola
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(155, 52)
+        Me.Label22.Location = New System.Drawing.Point(116, 42)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(37, 13)
+        Me.Label22.Size = New System.Drawing.Size(29, 12)
         Me.Label22.TabIndex = 4
         Me.Label22.Text = "times."
         '
@@ -2141,10 +2183,11 @@ Partial Class frmConsola
         Me.cboxWordKillEachTimes.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.cboxWordKillEachTimes.FormattingEnabled = True
         Me.cboxWordKillEachTimes.Items.AddRange(New Object() {" 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8"})
-        Me.cboxWordKillEachTimes.Location = New System.Drawing.Point(110, 48)
+        Me.cboxWordKillEachTimes.Location = New System.Drawing.Point(82, 39)
+        Me.cboxWordKillEachTimes.Margin = New System.Windows.Forms.Padding(2)
         Me.cboxWordKillEachTimes.MaxLength = 2
         Me.cboxWordKillEachTimes.Name = "cboxWordKillEachTimes"
-        Me.cboxWordKillEachTimes.Size = New System.Drawing.Size(42, 21)
+        Me.cboxWordKillEachTimes.Size = New System.Drawing.Size(32, 20)
         Me.cboxWordKillEachTimes.TabIndex = 3
         Me.cboxWordKillEachTimes.Text = "2"
         '
@@ -2152,9 +2195,10 @@ Partial Class frmConsola
         '
         Me.rbWordsKick.AutoSize = True
         Me.rbWordsKick.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbWordsKick.Location = New System.Drawing.Point(10, 73)
+        Me.rbWordsKick.Location = New System.Drawing.Point(8, 59)
+        Me.rbWordsKick.Margin = New System.Windows.Forms.Padding(2)
         Me.rbWordsKick.Name = "rbWordsKick"
-        Me.rbWordsKick.Size = New System.Drawing.Size(96, 17)
+        Me.rbWordsKick.Size = New System.Drawing.Size(79, 16)
         Me.rbWordsKick.TabIndex = 2
         Me.rbWordsKick.Text = "KICK him each"
         Me.rbWordsKick.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -2165,9 +2209,10 @@ Partial Class frmConsola
         Me.rbWordsSendWarning.AutoSize = True
         Me.rbWordsSendWarning.Checked = True
         Me.rbWordsSendWarning.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbWordsSendWarning.Location = New System.Drawing.Point(10, 26)
+        Me.rbWordsSendWarning.Location = New System.Drawing.Point(8, 21)
+        Me.rbWordsSendWarning.Margin = New System.Windows.Forms.Padding(2)
         Me.rbWordsSendWarning.Name = "rbWordsSendWarning"
-        Me.rbWordsSendWarning.Size = New System.Drawing.Size(201, 17)
+        Me.rbWordsSendWarning.Size = New System.Drawing.Size(158, 16)
         Me.rbWordsSendWarning.TabIndex = 0
         Me.rbWordsSendWarning.TabStop = True
         Me.rbWordsSendWarning.Text = "Only send a message to the player"
@@ -2177,9 +2222,10 @@ Partial Class frmConsola
         '
         Me.rbWordsKill.AutoSize = True
         Me.rbWordsKill.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbWordsKill.Location = New System.Drawing.Point(10, 50)
+        Me.rbWordsKill.Location = New System.Drawing.Point(8, 41)
+        Me.rbWordsKill.Margin = New System.Windows.Forms.Padding(2)
         Me.rbWordsKill.Name = "rbWordsKill"
-        Me.rbWordsKill.Size = New System.Drawing.Size(96, 17)
+        Me.rbWordsKill.Size = New System.Drawing.Size(78, 16)
         Me.rbWordsKill.TabIndex = 1
         Me.rbWordsKill.Text = "KILL  him each"
         Me.rbWordsKill.TextAlign = System.Drawing.ContentAlignment.TopLeft
@@ -2218,10 +2264,10 @@ Partial Class frmConsola
         Me.dgPlayersWarned.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgPlayersWarned.EnableHeadersVisualStyles = False
         Me.dgPlayersWarned.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.dgPlayersWarned.Location = New System.Drawing.Point(240, 5)
-        Me.dgPlayersWarned.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.dgPlayersWarned.MaximumSize = New System.Drawing.Size(615, 786)
-        Me.dgPlayersWarned.MinimumSize = New System.Drawing.Size(220, 286)
+        Me.dgPlayersWarned.Location = New System.Drawing.Point(180, 4)
+        Me.dgPlayersWarned.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgPlayersWarned.MaximumSize = New System.Drawing.Size(461, 639)
+        Me.dgPlayersWarned.MinimumSize = New System.Drawing.Size(165, 232)
         Me.dgPlayersWarned.MultiSelect = False
         Me.dgPlayersWarned.Name = "dgPlayersWarned"
         Me.dgPlayersWarned.ReadOnly = True
@@ -2231,7 +2277,7 @@ Partial Class frmConsola
         Me.dgPlayersWarned.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgPlayersWarned.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgPlayersWarned.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgPlayersWarned.Size = New System.Drawing.Size(238, 308)
+        Me.dgPlayersWarned.Size = New System.Drawing.Size(178, 250)
         Me.dgPlayersWarned.StandardTab = True
         Me.dgPlayersWarned.TabIndex = 64
         Me.dgPlayersWarned.TabStop = False
@@ -2270,11 +2316,11 @@ Partial Class frmConsola
         Me.txtAddWords.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAddWords.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAddWords.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(20, Byte), Integer))
-        Me.txtAddWords.Location = New System.Drawing.Point(4, 485)
-        Me.txtAddWords.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtAddWords.Location = New System.Drawing.Point(3, 394)
+        Me.txtAddWords.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAddWords.MaxLength = 42
         Me.txtAddWords.Name = "txtAddWords"
-        Me.txtAddWords.Size = New System.Drawing.Size(228, 21)
+        Me.txtAddWords.Size = New System.Drawing.Size(172, 19)
         Me.txtAddWords.TabIndex = 63
         Me.ToolTip1.SetToolTip(Me.txtAddWords, "Words typed here will be added to the forbidden list words.")
         '
@@ -2283,10 +2329,10 @@ Partial Class frmConsola
         Me.btnAddWord.BackColor = System.Drawing.Color.FromArgb(CType(CType(225, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(98, Byte), Integer))
         Me.btnAddWord.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddWord.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.btnAddWord.Location = New System.Drawing.Point(155, 525)
-        Me.btnAddWord.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAddWord.Location = New System.Drawing.Point(116, 427)
+        Me.btnAddWord.Margin = New System.Windows.Forms.Padding(2)
         Me.btnAddWord.Name = "btnAddWord"
-        Me.btnAddWord.Size = New System.Drawing.Size(77, 39)
+        Me.btnAddWord.Size = New System.Drawing.Size(58, 32)
         Me.btnAddWord.TabIndex = 62
         Me.btnAddWord.Text = "Add"
         Me.ToolTip1.SetToolTip(Me.btnAddWord, "Add the phrase/word typed above to the list.")
@@ -2296,10 +2342,10 @@ Partial Class frmConsola
         '
         Me.btnRemoveWords.BackColor = System.Drawing.Color.DarkKhaki
         Me.btnRemoveWords.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRemoveWords.Location = New System.Drawing.Point(8, 525)
-        Me.btnRemoveWords.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnRemoveWords.Location = New System.Drawing.Point(6, 427)
+        Me.btnRemoveWords.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRemoveWords.Name = "btnRemoveWords"
-        Me.btnRemoveWords.Size = New System.Drawing.Size(74, 39)
+        Me.btnRemoveWords.Size = New System.Drawing.Size(56, 32)
         Me.btnRemoveWords.TabIndex = 61
         Me.btnRemoveWords.Text = "Remove"
         Me.ToolTip1.SetToolTip(Me.btnRemoveWords, "Remove all selected words in the forbidden list words above.")
@@ -2310,12 +2356,13 @@ Partial Class frmConsola
         Me.lbWords.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbWords.FormattingEnabled = True
         Me.lbWords.HorizontalScrollbar = True
-        Me.lbWords.Location = New System.Drawing.Point(3, 36)
-        Me.lbWords.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lbWords.ItemHeight = 12
+        Me.lbWords.Location = New System.Drawing.Point(2, 29)
+        Me.lbWords.Margin = New System.Windows.Forms.Padding(2)
         Me.lbWords.Name = "lbWords"
         Me.lbWords.ScrollAlwaysVisible = True
         Me.lbWords.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
-        Me.lbWords.Size = New System.Drawing.Size(229, 433)
+        Me.lbWords.Size = New System.Drawing.Size(173, 352)
         Me.lbWords.TabIndex = 60
         Me.ToolTip1.SetToolTip(Me.lbWords, "Current words/phrases forbidden in this server.")
         '
@@ -2325,9 +2372,10 @@ Partial Class frmConsola
         Me.Label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label21.Font = New System.Drawing.Font("Segoe UI", 6.886957!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label21.Location = New System.Drawing.Point(3, 5)
+        Me.Label21.Location = New System.Drawing.Point(2, 4)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(229, 32)
+        Me.Label21.Size = New System.Drawing.Size(172, 26)
         Me.Label21.TabIndex = 59
         Me.Label21.Text = "List of forbidden Phrases/Words"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2354,29 +2402,30 @@ Partial Class frmConsola
         Me.btnHelp.AutoSize = True
         Me.btnHelp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.btnHelp.Font = New System.Drawing.Font("Segoe UI", 6.26087!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHelp.Location = New System.Drawing.Point(421, 1)
+        Me.btnHelp.Location = New System.Drawing.Point(400, 1)
+        Me.btnHelp.Margin = New System.Windows.Forms.Padding(2)
         Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Size = New System.Drawing.Size(62, 23)
+        Me.btnHelp.Size = New System.Drawing.Size(50, 22)
         Me.btnHelp.TabIndex = 62
         Me.btnHelp.Text = "Help (F1)"
         Me.btnHelp.UseVisualStyleBackColor = True
         '
         'frmConsola
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 600)
+        Me.ClientSize = New System.Drawing.Size(458, 493)
         Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.TabPanel1)
         Me.ForeColor = System.Drawing.SystemColors.WindowText
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Location = New System.Drawing.Point(10, 10)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(709, 846)
+        Me.MaximumSize = New System.Drawing.Size(536, 695)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(509, 646)
+        Me.MinimumSize = New System.Drawing.Size(386, 532)
         Me.Name = "frmConsola"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Coj2 Controller"
@@ -2386,6 +2435,7 @@ Partial Class frmConsola
         Me.PanelTeams.ResumeLayout(False)
         Me.PanelTeams.PerformLayout()
         Me.PanelAdminMess.ResumeLayout(False)
+        Me.PanelAdminMess.PerformLayout()
         Me.TabPlayers.ResumeLayout(False)
         Me.PanelPlayer.ResumeLayout(False)
         Me.PanelPlayer.PerformLayout()
